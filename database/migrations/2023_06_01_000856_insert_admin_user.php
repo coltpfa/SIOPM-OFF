@@ -14,9 +14,9 @@ return new class extends Migration
     {
         User::create([
             'name' => "admin",
-            'email' => "test@hotmail.com",
+            'user' => "123456",
             'password' => bcrypt('admin@123'),
-            'email_verified_at' => now(),
+            'level' => '15',
         ]);
     }
 

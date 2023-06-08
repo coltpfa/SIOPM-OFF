@@ -18,17 +18,22 @@ Route::group(['as' => 'auth.'], function () {
     Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login.do');
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
     Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
-    Route::get('/cadastro', [\App\Http\Controllers\AuthController::class, 'cadastro'])->name('cadastro');
-    Route::post('/cadastro', [\App\Http\Controllers\AuthController::class, 'cadastro'])->name('cadastro.do');
-    Route::get('/ocorrencia', [\App\Http\Controllers\AuthController::class, 'ocorrencia'])->name('ocorrencia');
-    Route::post('/ocorrencia', [\App\Http\Controllers\AuthController::class, 'ocorrencia'])->name('ocorrencia.do');
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/cadastro', function () {
-        return view('cadastro');
-    })->name('cadastro');
-    Route::get('/ocorrencia', function () {
-        return view('ocorrencia');
-    })->name('ocorrencia');
+
+    Route::group(['prefix'=>'usuarios','as'=>'users.'],function(){
+        Route::get('/',[\App\Http\Controllers\Users::class, 'index'])->name('index');
+        Route::get('/cadastro',[\App\Http\Controllers\Users::class,'create'])->name('cadastro');
+        Route::post('/store',[\App\Http\Controllers\Users::class,'store'])->name('store');
+        Route::get('/editando/{id}',[\App\Http\Controllers\Users::class,'edit'])->name('edit');
+        Route::put('/update/{id}',[\App\Http\Controllers\Users::class,'update'])->name('update');
+        Route::get('/delete/{id}',[\App\Http\Controllers\Users::class,'destroy'])->name('delete');
+    });
+
+    Route::get('/dash', function(){
+        return view('dash');
+    })->name('dash');
+
+    Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
 });

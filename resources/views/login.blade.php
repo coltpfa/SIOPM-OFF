@@ -6,13 +6,21 @@
             <div class="row">
                 <h1 class="title text-center">{{ env('APP_NAMES', "LOGIN") }}</h1>
             </div>
+            @if($errors->all())
+                @foreach($errors->all() as $error)
+                    <x-alert color="danger" message="{{ $error }}"/>
+                @endforeach
+            @endif
+            @if(session()->exists('message'))
+                <x-alert color="{{ session()->get('color') }}" message="{{ session()->get('message') }}"/>
+            @endif
             <div class="row">
                 <form action="{{ route('auth.login.do') }}" method="POST">
                     @csrf
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Usuário</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        <input type="text" name="user" class="form-control" id="exampleInputEmail1"
                                aria-describedby="emailHelp" placeholder="insira seu usúario">
                         <div id="emailHelp" class="form-text">Não compartilhe seu usúario e senha com ninguém.</div>
                     </div>
@@ -31,6 +39,6 @@
 
         </div>
     </div>
-    
+
 
 @endsection

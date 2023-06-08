@@ -14,11 +14,20 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('user')->unique();
             $table->string('password');
+            $table->integer('level');
+            $table->unsignedBigInteger('user_create')->nullable();
+            $table->unsignedBigInteger('user_update')->nullable();
+            $table->dateTime('user_update_time')->nullable();
+            $table->unsignedBigInteger('user_deleted')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('user_create')->references('id')->on('users');
+            $table->foreign('user_update')->references('id')->on('users');
+            $table->foreign('user_deleted')->references('id')->on('users');
         });
     }
 
