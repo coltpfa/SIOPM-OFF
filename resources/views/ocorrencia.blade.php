@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
                     <label for="inputSolicitante" class="form-label">Matricula</label>
-                    <input type="text" class="form-control" autocomplete="off" value="{{$user->id}}" readonly
+                    <input type="text" class="form-control" autocomplete="off" value="{{$user->user}}" readonly
                            placeholder="Digite o nome do solicitante" required>
                 </div>
                 <div class="col-12 col-md-6 mb-3">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="row">
-                <form action="{{ route('auth.ocorrencia.do') }}" method="POST" autocomplete="off">
+                <form action="{{ route('auth.login.do') }}" method="POST" autocomplete="off">
                     @csrf
                     <div class="row mb-3">
                         <div class="col-md-8 mb-3">
@@ -68,23 +68,24 @@
                                    placeholder="Digite uma referência" required>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col-md-8 mb-3">
+                    <div class="row mb-2">
+                        <div class="col-md-2 mb-2">
+                            <label for="inputBatalhao" class="form-label">BPM/M</label>
+                            <input type="text" name="batalhao" class="form-control" id="inputBatalhao"
+                                   placeholder="Batalhão" maxlength="5" required>
+                        </div>
+                        <div class="col-md-2 mb-2">
+                            <label for="inputCompanhia" class="form-label">CIA</label>
+                            <input type="text" name="companhia" class="form-control" id="inputCompanhia"
+                                   placeholder="Companhia" required>
+                        </div>
+                        <div class="col-md-8 mb-4">
                             <label for="inputNatureza" class="form-label">Natureza da Ocorrência</label>
                             <input type="text" name="natureza" class="form-control" id="inputNatureza"
                                    placeholder="Digite a natureza da ocorrência" required>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="inputBatalhao" class="form-label">Batalhão</label>
-                            <input type="text" name="batalhao" class="form-control" id="inputBatalhao"
-                                   placeholder="Digite o batalhão" maxlength="5" required>
-                        </div>
                     </div>
-                    <div class="mb-3 text-center">
-                        <label for="inputHistorico" class="form-label ">Histórico de Ocorrência</label>
-                        <textarea name="historico" class="form-control" id="inputHistorico"
-                                  placeholder="Digite o histórico de ocorrência" rows="4" required></textarea>
-                    </div>
+
 
                     <!-- Marque Box -->
                     <div class="form-check">
