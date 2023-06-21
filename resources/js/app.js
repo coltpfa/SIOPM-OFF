@@ -1,4 +1,10 @@
 import './bootstrap';
+import '../scss/styles.scss';
+
+import * as bootstrap from 'bootstrap'
+import jQuery from "jquery";
+import DataTable from 'datatables.net-bs5';
+import 'datatables.net-responsive-bs5';
 function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}const ANIMATION_DURATION = 300;
 
 const SIDEBAR_EL = document.getElementById("sidebar");
