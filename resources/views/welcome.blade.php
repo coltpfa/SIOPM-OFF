@@ -8,22 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <link href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.css" rel="stylesheet"/>
     @yield('css')
-    <head>
-        <style>
-            .bg-danger {
-                background: linear-gradient(#630303, #f50202);
-            }
-        </style>
-    </head>
+</head>
 <body>
-<div class="bg-dark p-5">
-
-</div>
-<div class="bg-danger" style="height: 5px">
-
-</div>
 <div class="container">
-@yield('content')
+    @yield('content')
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -32,7 +20,6 @@
 
 @stack('js')
 </body>
-
 </html>
 
 
