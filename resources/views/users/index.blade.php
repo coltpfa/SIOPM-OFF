@@ -1,6 +1,7 @@
 @extends('welcome');
-
+@extends('menu')
 @section('content')
+
 
     <div class="my-5 d-flex justify-content-between align-content-between">
         <h1>Listando Usuários</h1>

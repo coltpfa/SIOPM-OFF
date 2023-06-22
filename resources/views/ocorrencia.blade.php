@@ -1,25 +1,36 @@
 @extends('welcome')
 @extends('menu')
 @section('content')
+    <style>
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
     <div class="container d-flex justify-content-center mt-5">
-        <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5"
-             style="max-width: 1500px;">
+        <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5" style="max-width: 1500px;">
             <div class="row mb-3">
                 <h2 class="title text-center">{{ env('APP_NAMEs', "CADASTRO DE OCORRÊNCIA") }}</h2>
             </div>
 
             <div class="row">
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="inputSolicitante" class="form-label">Matricula</label>
-                    <input type="text" class="form-control" autocomplete="off" value="{{$user->user}}" readonly
-                           placeholder="Digite o nome do solicitante" required>
+                <div class="col-12 col-md-4 mb-3">
+                    <label for="inputSolicitante" class="form-label ">Matricula</label>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{$user->user}}" readonly placeholder="Digite o nome do solicitante" required>
                 </div>
-                <div class="col-12 col-md-6 mb-3">
+                <div class="col-12 col-md-4 mb-3">
                     <label for="inputSolicitante" class="form-label">Usuário</label>
-                    <input type="text" class="form-control" autocomplete="off" value="{{$user->name}}" readonly
-                           placeholder="Digite o nome do solicitante" required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{$user->name}}" readonly placeholder="Digite o nome do solicitante" required>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="inputHorario" class="form-label">Horas:</label>
+                    <span id="horarioAtual" class="form-control bold-text" readonly>{{ date('H:i:s') }}</span>
                 </div>
             </div>
+
+
+
+
+
             <div class="row">
                 <form action="{{ route('auth.login.do') }}" method="POST" autocomplete="off">
                     @csrf
@@ -112,6 +123,13 @@
     <br>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script>
+
+        setInterval(function() {
+            var horarioAtual = new Date().toLocaleTimeString();
+            document.getElementById('horarioAtual').textContent = horarioAtual;
+        }, 1000);
+
+
         const estados = [
             { value: 'A01', label: 'A01 - HOMICÍDIO CULPOSO' },
             { value: 'A02', label: 'A02 - HOMICÍDIO DOLOSO' },

@@ -36,4 +36,5 @@ Route::group(['middleware' => ['auth']], function () {
     })->name('dash');
 
     Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
+
 });

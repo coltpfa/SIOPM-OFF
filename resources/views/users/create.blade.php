@@ -1,5 +1,6 @@
 @extends('welcome')
 @section('content')
+@extends('menu')
 
         <div class="container d-flex justify-content-center mt-5">
     <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-3" style="max-width: 700px;">
