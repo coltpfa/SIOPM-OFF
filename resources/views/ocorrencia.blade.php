@@ -38,19 +38,19 @@
                         <div class="col-md-8 mb-3">
                             <label for="inputSolicitante" class="form-label">Solicitante</label>
                             <div class="d-flex align-items-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="checkboxAnonimo">
-                                    <label class="form-check-label" for="checkboxAnonimo">Anônimo </label>
-                                </div>
                                 <input type="text" name="solicitante" class="form-control" autocomplete="off" id="inputSolicitante" placeholder="Digite o nome do solicitante" required>
+                                <div class="form-check ms-3">
+                                    <input class="form-check-input" type="checkbox" id="checkboxAnonimo">
+                                    <label class="form-check-label" for="checkboxAnonimo">Anônimo</label>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="inputTelefone" class="form-label">Telefone</label>
-                            <input type="tel" name="telefone" class="form-control" autocomplete="off" id="inputTelefone"
-                                   placeholder="Digite o telefone" required>
+                            <input type="tel" name="telefone" class="form-control" autocomplete="off" id="inputTelefone" placeholder="Digite o telefone" required>
                         </div>
                     </div>
+
                     <div class="mb-3">
                         <label for="inputCidade" class="form-label">Cidade</label>
                         <input type="text" name="cidade" class="form-control" autocomplete="off" id="inputCidade"
