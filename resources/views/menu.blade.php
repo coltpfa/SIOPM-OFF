@@ -40,7 +40,7 @@
                             <div class="sub-menu-list">
                                 <ul>
                                     <li class="menu-item">
-                                        <a href="#" style="text-decoration: none;">
+                                        <a href="/ocorrencia" style="text-decoration: none;">
                           <span class="menu-title">Cadastro de Ocorrência
                                         </a>
                                     </li>
@@ -343,12 +343,12 @@
                             <div class="sub-menu-list">
                                 <ul>
                                     <li class="menu-item">
-                                        <a href="#" style="text-decoration: none;">
+                                        <a href="/usuarios" style="text-decoration: none;">
                                             <span class="menu-title">Lista de Usuarios</span>
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="#" style="text-decoration: none;">
+                                        <a href="/usuarios/cadastro" style="text-decoration: none;">
                                             <span class="menu-title">Criar Usuario</span>
                                         </a>
                                     </li>
