@@ -37,8 +37,13 @@
                     <div class="row mb-3">
                         <div class="col-md-8 mb-3">
                             <label for="inputSolicitante" class="form-label">Solicitante</label>
-                            <input type="text" name="solicitante" class="form-control" autocomplete="off" id="inputSolicitante"
-                                   placeholder="Digite o nome do solicitante" required>
+                            <div class="d-flex align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="checkboxAnonimo">
+                                    <label class="form-check-label" for="checkboxAnonimo">Anônimo </label>
+                                </div>
+                                <input type="text" name="solicitante" class="form-control" autocomplete="off" id="inputSolicitante" placeholder="Digite o nome do solicitante" required>
+                            </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="inputTelefone" class="form-label">Telefone</label>
@@ -124,12 +129,28 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script>
 
+        // CHECK ANONIMO
+        const checkboxAnonimo = document.getElementById('checkboxAnonimo');
+        const inputSolicitante = document.getElementById('inputSolicitante');
+
+        checkboxAnonimo.addEventListener('change', function() {
+            if (checkboxAnonimo.checked) {
+                inputSolicitante.value = 'Anônimo';
+                inputSolicitante.disabled = true;
+            } else {
+                inputSolicitante.value = '';
+                inputSolicitante.disabled = false;
+            }
+        });
+
+
+        // HORAS
         setInterval(function() {
             var horarioAtual = new Date().toLocaleTimeString();
             document.getElementById('horarioAtual').textContent = horarioAtual;
         }, 1000);
 
-
+        // NATUREZA DA OCORRENCIA
         const estados = [
             { value: 'A01', label: 'A01 - HOMICÍDIO CULPOSO' },
             { value: 'A02', label: 'A02 - HOMICÍDIO DOLOSO' },
