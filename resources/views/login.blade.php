@@ -4,7 +4,7 @@
 
         <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-3" style="max-width: 700px;">
             <div class="row">
-                <h1 class="title text-center">{{ env('APP_NAMES', "LOGIN") }}</h1>
+                <h1 class="title text-center">LOGIN</h1>
             </div>
             @if($errors->all())
                 @foreach($errors->all() as $error)
