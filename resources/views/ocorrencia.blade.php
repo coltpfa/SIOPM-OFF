@@ -1,5 +1,4 @@
-@extends('welcome')
-@extends('menu')
+@extends('theme.theme')
 
 @section('content')
     <style>
@@ -128,6 +127,9 @@
         </div>
     </div>
     <br>
+@endsection
+
+@push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script>
 
@@ -383,4 +385,4 @@
         });
 
     </script>
-@endsection
+@endpush

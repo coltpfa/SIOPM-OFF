@@ -20,36 +20,10 @@ $(function() {
                         $('.acceptContainer').addClass('loadIn');
                         setTimeout(function() {
                             $('.formDiv, form h1').addClass('loadIn');
-                        }, 500)
-                    }, 500)
-                }, 500)
-            }, 500)
-        }, 1000)
-    }, 10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        }, 500);
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 1000);
+    }, 10);
 });

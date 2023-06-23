@@ -3,7 +3,7 @@
     <div class="container d-flex justify-content-center mt-5">
         <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-3" style="max-width: 700px;">
             <div class="row">
-                <h1 class="title text-center">{{ env('APP_NAMES', "BEM-VINDO") }}</h1>
+                <h1 class="title text-center">BEM-VINDO</h1>
             </div>
             <div class="row">
                 <form id="menuForm" method="POST">
@@ -22,7 +22,7 @@
                     <div class="mb-3" id="ramalContainer" style="display: none;">
                         <label for="exampleInputRamal" class="form-label">RAMAL</label>
                         <select class="form-select" name="ramal" id="exampleInputRamal">
-                            <option value="">Selecione o RAMAL</option>
+                            <option value="" selected disabled>Selecione o RAMAL</option>
                             @for($i = 3100; $i <= 3200; $i++)
                                 <option value="{{ str_pad($i, 4, '0', STR_PAD_LEFT) }}">{{ str_pad($i, 4, '0', STR_PAD_LEFT) }}</option>
                             @endfor
@@ -31,7 +31,7 @@
                     <div class="mb-3" id="batalhaoContainer" style="display: none;">
                         <label for="exampleInputBatalhao" class="form-label">Batalhão</label>
                         <select class="form-select" name="batalhao" id="exampleInputBatalhao">
-                            <option value="">Escolha o Batalhão</option>
+                            <option value="" selected disabled>Escolha o Batalhão</option>
                             @for($i = 1; $i <= 50; $i++)
                                 <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}º BPM/M">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}º BPM/M</option>
                             @endfor
@@ -40,7 +40,7 @@
                     <div class="mb-3" id="cpaContainer" style="display: none;">
                         <label for="exampleInputCPA" class="form-label">CPA</label>
                         <select class="form-select" name="cpa" id="exampleInputCPA">
-                            <option value="">Escolha o CPA</option>
+                            <option value="" selected disabled>Escolha o CPA</option>
                             @for($i = 1; $i <= 12; $i++)
                                 <option value="CPA/M{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">CPA/M{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
                             @endfor
@@ -78,9 +78,9 @@
             var level = document.getElementById('exampleInputLevel').value;
 
             if (level === 'despachador') {
-                window.location.href = '/despachador'; // Redireciona para a página do despachador
+                window.location.href = "{{route('despachador')}}"; // Redireciona para a página do despachador
             } else if (level === 'atendente') {
-                window.location.href = '/ocorrencia'; // Redireciona para a página do atendente
+                window.location.href = "{{route('ocorrencia')}}"; // Redireciona para a página do atendente
             } else if (level === 'supervisor') {
                 window.location.href = '/supervisor'; // Redireciona para a página do supervisor
             } else if (level === 'administrador') {
