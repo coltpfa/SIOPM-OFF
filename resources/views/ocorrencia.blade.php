@@ -1,5 +1,6 @@
 @extends('welcome')
 @extends('menu')
+
 @section('content')
     <style>
         .bold-text {
