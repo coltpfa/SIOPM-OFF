@@ -19,7 +19,7 @@
         <div class="sidebar-layout">
             <div class="sidebar-header">
                 <div class="pro-sidebar-logo">
-                    <div><img src="PMESP.svg" style="width:130px; margin-left: 70px; margin-top: 20px;"></div>
+                    <div><img src="https://raw.githubusercontent.com/coltpfa/COPOM/main/MENU/PMESP.svg" style="width:130px; margin-left: 70px; margin-top: 20px;"></div>
                     <h5>SIOPM OFFLINE</h5>
                 </div>
             </div>
