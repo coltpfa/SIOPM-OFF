@@ -8,19 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"
     @yield('css')
     <head>
-        <style>
-            .bg-danger {
-                background: linear-gradient(#630303, #f50202);
-            }
-        </style>
+
     </head>
 <body>
-<div class="bg-dark p-5">
 
-</div>
-<div class="bg-danger" style="height: 5px">
 
-</div>
 <div class="container">
 
 
