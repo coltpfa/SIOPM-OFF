@@ -32,11 +32,8 @@
                     <div class="d-grid gap-2 mt-5">
                         <button type="submit" class="btn btn-dark">Login</button>
                     </div>
-
                 </form>
-
             </div>
-
         </div>
     </div>
 

@@ -52,7 +52,7 @@
 </div>
 <!-- partial -->
 
-<script src="{{ asset('menu.js') }}"></script>
+<script src="{{ asset('menu.js') }}" type="module"></script>
 @hasSection('script')
     @yield('script')
 @endif
