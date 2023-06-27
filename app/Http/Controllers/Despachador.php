@@ -15,9 +15,29 @@ class Despachador extends Controller
         if(empty(\Session::has('batalhao'))){
             return redirect()->route('dash')->with(['message' => 'Necessário selecionar um batalhão antes de continuar', 'color' => 'danger']);
         }
+
+        $data = [
+            [
+                'gravidade' => 'U',
+                'endereco' => 'RUA JOAQUIM,525',
+                'nat' => 'C01',
+                'opm' => '3ª CIA 10ºBPM/M',
+                'espera' => '00:15:16',
+                'oco' => '15478',
+            ],
+            [
+                'gravidade' => 'U',
+                'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                'nat' => 'A98',
+                'opm' => '3ª CIA 10ºBPM/M',
+                'espera' => '00:10:11',
+                'oco' => '15478',
+            ],
+        ];
         return view('despachador',[
             'user'=>Auth::user(),
             'batalhao'=>\Session::get('batalhao'),
+            'opcoes'=>$data
         ]);
     }
 

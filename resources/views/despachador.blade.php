@@ -122,31 +122,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @php
-                                $opcoes = [
-                                    [
-                                        'gravidade' => 'U',
-                                        'endereco' => 'RUA JOAQUIM,525',
-                                        'nat' => 'C01',
-                                        'opm' => '3ª CIA 10ºBPM/M',
-                                        'espera' => '00:15:16',
-                                        'oco' => '15478',
-                                    ],
-                                    [
-                                        'gravidade' => 'U',
-                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
-                                        'nat' => 'A98',
-                                        'opm' => '3ª CIA 10ºBPM/M',
-                                        'espera' => '00:10:11',
-                                        'oco' => '15478',
-                                    ],
-
-
-
-                                ];
-                            @endphp
-
-                            @foreach ($opcoes as $opcao)
+                                                       @foreach ($opcoes as $opcao)
                                 <tr class="clickable-row">
                                     <td class="text-center">{{ $opcao['gravidade'] }}</td>
                                     <td>{{ $opcao['endereco'] }}</td>
