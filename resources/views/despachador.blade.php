@@ -61,22 +61,22 @@
                 <h2 class="title text-center">CONTROLE DE OCORRENCIAS</h2>
             </div>
 
-            <div class="row">
+            <div class="row my-3">
                 <div class="col-12 col-md-3">
                     <label for="inputSolicitante" class="form-label">Serviço</label>
                     <input type="text" class="form-control bold-text" autocomplete="off" value="{{ "Radio Patrulha porem terao diferentes tipos" }}" readonly placeholder="Digite o nome do solicitante" required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputSolicitante" class="form-label">Matricula</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ "matricula do usuario" }}" readonly placeholder="Digite o nome do solicitante" required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->user }}" readonly required>
                 </div>
                 <div class="col-12 col-md-3">
                     <label for="inputSolicitante" class="form-label">Controlador</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ "nome do usuario" }}" readonly placeholder="Digite o nome do solicitante" required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->name }}" readonly required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputHorario" class="form-label">Cabine</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ "BAtalhao selecionado" }}" readonly placeholder="Digite o nome do solicitante" required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $batalhao }}º BPM/M" readonly required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputHorario" class="form-label">Horas:</label>

@@ -610,7 +610,7 @@
                         </div>
                     </li>
                     <li class="menu-item">
-                        <a href="/logout" style="text-decoration: none;">
+                        <a href="{{route('auth.logout')}}" style="text-decoration: none;">
                <span class="menu-icon">
                <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
                            fill="currentcolor"

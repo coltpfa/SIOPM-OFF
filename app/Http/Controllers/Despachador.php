@@ -10,10 +10,14 @@ class Despachador extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(?Request $request)
     {
+        if(empty(\Session::has('batalhao'))){
+            return redirect()->route('dash')->with(['message' => 'Necessário selecionar um batalhão antes de continuar', 'color' => 'danger']);
+        }
         return view('despachador',[
             'user'=>Auth::user(),
+            'batalhao'=>\Session::get('batalhao'),
         ]);
     }
 

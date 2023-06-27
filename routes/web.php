@@ -31,9 +31,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/delete/{id}',[\App\Http\Controllers\Users::class,'destroy'])->name('delete');
     });
 
-    Route::get('/dash', function(){
-        return view('dash');
-    })->name('dash');
+    Route::get('/dash',[\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');
+    Route::post('/dash',[\App\Http\Controllers\AuthController::class, 'dashAction'])->name('dash.do');
 
     Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
     Route::get('/despachador', [\App\Http\Controllers\Despachador::class,'index'])->name('despachador');
