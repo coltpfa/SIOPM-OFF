@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>{{ env('APP_NAME', "SIOPM-OFF") }}</title>
 
-    @vite([ 'resources/js/app.js'])
+
 
     @hasSection('css')
         @yield('css')
     @endif
 </head>
-<body>
+<body class="{{Auth::user()->theme == 'dark' ? 'dark' : 'light'}}">
 <div class="layout has-sidebar fixed-sidebar fixed-header">
     @include("theme.menu")
     <div id="overlay" class="overlay"></div>
@@ -51,8 +51,23 @@
     </div>
 </div>
 <!-- partial -->
+@vite([ 'resources/js/app.js','resources/js/menu.js']);
+<script>
+    function setTheme(theme) {
+        const body = document.querySelector('body');
+        body.classList.remove('dark', 'light');
+        body.classList.add(theme);
 
-<script src="{{ asset('menu.js') }}" type="module"></script>
+        $.ajax({
+            url: '{{route('users.set-theme')}}',
+            data: {
+                _token: '{{ csrf_token() }}',
+                theme: theme
+            },
+            type: 'POST'
+        })
+    }
+</script>
 @hasSection('script')
     @yield('script')
 @endif

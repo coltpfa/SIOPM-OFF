@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/editando/{id}',[\App\Http\Controllers\Users::class,'edit'])->name('edit');
         Route::put('/update/{id}',[\App\Http\Controllers\Users::class,'update'])->name('update');
         Route::get('/delete/{id}',[\App\Http\Controllers\Users::class,'destroy'])->name('delete');
+        Route::post('/set-theme',[\App\Http\Controllers\Users::class,'setTheme'])->name('set-theme');
     });
 
     Route::get('/dash',[\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');

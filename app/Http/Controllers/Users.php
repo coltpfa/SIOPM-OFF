@@ -95,4 +95,16 @@ class Users extends Controller
 
         return redirect()->route('users.index')->with(['color' => 'success', 'message' => 'Usuário removido com sucesso!']);
     }
+
+    public function setTheme(Request $request)
+    {
+        $user = \Auth::user();
+        $user->update([
+            'theme' => $request->get('theme', 'light'),
+        ]);
+        $user->save();
+        $user->refresh();
+
+        return response()->noContent();
+    }
 }
