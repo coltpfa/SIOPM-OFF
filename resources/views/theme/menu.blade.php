@@ -181,7 +181,7 @@
                         <div class="sub-menu-list">
                             <ul>
                                 <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
+                                    <a href="/despachador" style="text-decoration: none;">
                                         <span class="menu-title">Cabine Batalhão</span>
                                     </a>
                                 </li>
