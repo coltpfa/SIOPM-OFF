@@ -9,6 +9,13 @@
             line-height: 0.1;
         }
 
+        /* titulo da tabela */
+        .table-fixed-header thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
         table.table-secondary {
             font-size: 8pt; /* Defina o tamanho da fonte desejado */
         }
@@ -70,7 +77,8 @@
             <div class="row">
                 <div class="col-12 col-md-2">
                     <h6 class="title text-center">US</h6>
-                    <table class="table table-secondary table-striped-columns table-hover">
+                    <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
+                        <table class="table table-secondary table-striped-columns table-hover table-fixed-header">
                         <thead>
                         <tr>
                             <th style="width: 5%;">Viatura</th>
@@ -84,13 +92,14 @@
                             <td>28250</td>
                         </tr>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="col-12 col-md-10">
-                    <h6 class="title text-center">Ocorrências Pendentes</h6>
-                    <div class="table-responsive">
-                        <table class="table table-secondary table-striped-columns table-hover">
+                    <div class="col-12 col-md-10">
+                        <h6 class="title text-center">Ocorrências Pendentes</h6>
+                        <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
+                            <table class="table table-secondary table-striped-columns table-hover table-fixed-header">
                             <thead>
                             <tr>
                                 <th style="width: 1%;" class="text-center">⚡️</th>
@@ -127,7 +136,272 @@
                                         'opm' => '3ª CIA 07ºBPM/M',
                                         'espera' => '00:24:12',
                                         'oco' => '15478',
-                                    ]
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA JOAQUIM,525',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:15:16',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'U',
+                                        'endereco' => 'RUA MENESES DE SOUSA, 1202',
+                                        'nat' => 'A98',
+                                        'opm' => '3ª CIA 10ºBPM/M',
+                                        'espera' => '00:10:11',
+                                        'oco' => '15478',
+                                    ],
+                                    [
+                                        'gravidade' => 'N',
+                                        'endereco' => 'RUA RIBEIRO DE LIMA, 158',
+                                        'nat' => 'C01',
+                                        'opm' => '3ª CIA 07ºBPM/M',
+                                        'espera' => '00:24:12',
+                                        'oco' => '15478',
+                                    ],
+
 
                                 ];
                             @endphp
