@@ -1,5 +1,6 @@
 @extends('theme.theme')
-@section('content')
+
+@section('css')
     <style>
         .bold-text {
             font-weight: bold;font-size: 8pt;
@@ -50,11 +51,10 @@
         .button-container {
             display: flex;
         }
-
-
-
     </style>
+@endsection
 
+@section('content')
     <div class="container d-flex justify-content-center mt-5">
         <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5" style="max-width: 1500px;">
             <div class="row mb-3">
@@ -178,6 +178,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+@push('js')
     <script>
         // Função para criar um botão
         function createButton(text, id, clickHandler) {
@@ -557,4 +560,4 @@
 
 
     </script>
-@endsection
+@endpush
