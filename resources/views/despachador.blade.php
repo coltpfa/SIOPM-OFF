@@ -3,9 +3,11 @@
 @section('css')
     <style>
         .bold-text {
-            font-weight: bold;font-size: 8pt;
+            font-weight: bold;
+            font-size: 8pt;
 
         }
+
         table.table-secondary tbody td {
             line-height: 0.1;
         }
@@ -51,12 +53,17 @@
         .button-container {
             display: flex;
         }
+
+        .clickable-row{
+            cursor: pointer;
+        }
     </style>
 @endsection
 
 @section('content')
     <div class="container d-flex justify-content-center mt-5">
-        <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5" style="max-width: 1500px;">
+        <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5"
+             style="max-width: 1500px;">
             <div class="row mb-3">
                 <h2 class="title text-center">CONTROLE DE OCORRENCIAS</h2>
             </div>
@@ -64,19 +71,24 @@
             <div class="row my-3">
                 <div class="col-12 col-md-3">
                     <label for="inputSolicitante" class="form-label">Serviço</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ "Radio Patrulha porem terao diferentes tipos" }}" readonly placeholder="Digite o nome do solicitante" required>
+                    <input type="text" class="form-control bold-text" autocomplete="off"
+                           value="{{ "Radio Patrulha porem terao diferentes tipos" }}" readonly
+                           placeholder="Digite o nome do solicitante" required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputSolicitante" class="form-label">Matricula</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->user }}" readonly required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->user }}"
+                           readonly required>
                 </div>
                 <div class="col-12 col-md-3">
                     <label for="inputSolicitante" class="form-label">Controlador</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->name }}" readonly required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->name }}"
+                           readonly required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputHorario" class="form-label">Cabine</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $batalhao }}º BPM/M" readonly required>
+                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $batalhao }}º BPM/M"
+                           readonly required>
                 </div>
                 <div class="col-12 col-md-2">
                     <label for="inputHorario" class="form-label">Horas:</label>
@@ -90,27 +102,27 @@
                     <h6 class="title text-center">US</h6>
                     <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
                         <table class="table table-secondary table-striped-columns table-hover table-fixed-header">
-                        <thead>
-                        <tr>
-                            <th style="width: 5%;">Viatura</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>28100</td>
-                        </tr>
-                        <tr>
-                            <td>28250</td>
-                        </tr>
-                        </tbody>
+                            <thead>
+                            <tr>
+                                <th style="width: 5%;">Viatura</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>28100</td>
+                            </tr>
+                            <tr>
+                                <td>28250</td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
 
-                    <div class="col-12 col-md-10">
-                        <h6 class="title text-center">Ocorrências Pendentes</h6>
-                        <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
-                            <table class="table table-secondary table-striped-columns table-hover table-fixed-header">
+                <div class="col-12 col-md-10">
+                    <h6 class="title text-center">Ocorrências Pendentes</h6>
+                    <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
+                        <table class="table table-secondary table-hover table-fixed-header">
                             <thead>
                             <tr>
                                 <th style="width: 1%;" class="text-center">⚡️</th>
@@ -122,14 +134,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                                                       @foreach ($opcoes as $opcao)
-                                <tr class="clickable-row">
-                                    <td class="text-center">{{ $opcao['gravidade'] }}</td>
-                                    <td>{{ $opcao['endereco'] }}</td>
-                                    <td class="text-center">{{ $opcao['nat'] }}</td>
-                                    <td>{{ $opcao['opm'] }}</td>
-                                    <td>{{ $opcao['espera'] }}</td>
-                                    <td class="text-center">{{ $opcao['oco'] }}</td>
+                            @foreach ($opcoes as $opcao)
+                                <tr class="clickable-row {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">
+                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['gravidade'] }}</td>
+                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['endereco'] }}</td>
+                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['nat'] }}</td>
+                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}" >{{ $opcao['opm'] }}</td>
+                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['espera'] }}</td>
+                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['oco'] }}</td>
                                 </tr>
 
                             @endforeach
@@ -181,7 +193,6 @@
             textoInput.style.width = '300px'; // Defina a largura desejada
             textoInput.style.height = '100px'; // Defina a altura desejada
 
-
             // Crie as frases prontas com opção de marcação única
             var frasesProntas = [
                 'CFP E CGP CIENTE DAS PENDENCIAS',
@@ -196,10 +207,10 @@
 
             var selectedCheckbox = null;
 
-            frasesProntas.forEach(function(frase) {
+            frasesProntas.forEach(function (frase) {
                 var fraseCheckbox = document.createElement('input');
                 fraseCheckbox.setAttribute('type', 'checkbox');
-                fraseCheckbox.addEventListener('change', function() {
+                fraseCheckbox.addEventListener('change', function () {
                     if (fraseCheckbox.checked) {
                         if (selectedCheckbox !== null && selectedCheckbox !== fraseCheckbox) {
                             selectedCheckbox.checked = false;
@@ -223,7 +234,7 @@
             });
 
             // Crie o botão "OBSERVE"
-            var observeButton = createButton('OBSERVE', 'observe', function() {
+            var observeButton = createButton('OBSERVE', 'observe', function () {
                 var texto = textoInput.value;
                 if (texto) {
                     console.log('Texto observado:', texto);
@@ -233,7 +244,7 @@
             });
 
             // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharObservar', function() {
+            var closeButton = createButton('Fechar', 'fecharObservar', function () {
                 closePopup(popup);
             });
 
@@ -246,7 +257,7 @@
             // Crie o overlay (fundo escuro)
             var overlay = document.createElement('div');
             overlay.classList.add('overlay');
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 closePopup(popup);
             });
 
@@ -283,10 +294,10 @@
 
             var selectedCheckbox = null;
 
-            frasesProntas.forEach(function(frase) {
+            frasesProntas.forEach(function (frase) {
                 var fraseCheckbox = document.createElement('input');
                 fraseCheckbox.setAttribute('type', 'checkbox');
-                fraseCheckbox.addEventListener('change', function() {
+                fraseCheckbox.addEventListener('change', function () {
                     if (fraseCheckbox.checked) {
                         if (selectedCheckbox !== null && selectedCheckbox !== fraseCheckbox) {
                             selectedCheckbox.checked = false;
@@ -310,7 +321,7 @@
             });
 
             // Crie o botão "OBSERVE"
-            var observeButton = createButton('OBSERVE', 'observe', function() {
+            var observeButton = createButton('OBSERVE', 'observe', function () {
                 var texto = textoInput.value;
                 if (texto) {
                     console.log('Texto observado:', texto);
@@ -320,12 +331,12 @@
             });
 
             // Crie o botão "ABORTAR"
-            var abortarButton = createButton('ABORTAR', 'abortar', function() {
+            var abortarButton = createButton('ABORTAR', 'abortar', function () {
                 console.log('Ação de abortar');
             });
 
             // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharAbortar', function() {
+            var closeButton = createButton('Fechar', 'fecharAbortar', function () {
                 closePopup(popup);
             });
 
@@ -339,7 +350,7 @@
             // Crie o overlay (fundo escuro)
             var overlay = document.createElement('div');
             overlay.classList.add('overlay');
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 closePopup(popup);
             });
 
@@ -376,7 +387,7 @@
             popup.appendChild(selectBatalhoes);
 
             // Crie o botão "Redirecione"
-            var redirecioneButton = createButton('Redirecione', 'redirecione', function() {
+            var redirecioneButton = createButton('Redirecione', 'redirecione', function () {
                 // Lógica para redirecionar com base nas informações selecionadas
                 var observacao = observarOcorrencia.value;
                 var batalhaoSelecionado = selectBatalhoes.value;
@@ -391,7 +402,7 @@
             popup.appendChild(redirecioneButton);
 
             // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharRedirecionar', function() {
+            var closeButton = createButton('Fechar', 'fecharRedirecionar', function () {
                 closePopup(popup);
             });
 
@@ -401,7 +412,7 @@
             // Crie o overlay (fundo escuro)
             var overlay = document.createElement('div');
             overlay.classList.add('overlay');
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 closePopup(popup);
             });
 
@@ -409,9 +420,6 @@
             document.body.appendChild(popup);
             document.body.appendChild(overlay);
         }
-
-
-
 
         // Manipulador de clique genérico para os botões
         function handleButtonClick(event) {
@@ -455,8 +463,8 @@
         // Função para adicionar evento de clique em cada linha da tabela
         function addClickEventToRows() {
             var rows = document.querySelectorAll('.table-fixed-header tbody tr');
-            rows.forEach(function(row) {
-                row.addEventListener('click', function() {
+            rows.forEach(function (row) {
+                row.addEventListener('click', function () {
                     var gravidade = row.querySelector('td:nth-child(1)').textContent;
                     var endereco = row.querySelector('td:nth-child(2)').textContent;
                     var nat = row.querySelector('td:nth-child(3)').textContent;
@@ -470,7 +478,7 @@
         }
 
         // Chame a função para adicionar o evento de clique após a tabela ser carregada
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             addClickEventToRows();
         });
 
@@ -525,7 +533,7 @@
             // Crie o overlay (fundo escuro)
             var overlay = document.createElement('div');
             overlay.classList.add('overlay');
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 closePopup(popup);
             });
 
