@@ -220,7 +220,7 @@
 
                                 <li class="menu-item sub-menu">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Superisão 190</span>
+                                        <span class="menu-title">Supervisão 190</span>
                                     </a>
                                     <div class="sub-menu-list">
                                         <ul>
@@ -369,11 +369,83 @@
                     <li class="menu-item sub-menu">
                         <a href="#" style="text-decoration: none;">
                     <span class="menu-icon">
+                      <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentcolor" d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></svg></i>
+                    </span>
+                            <span class="menu-title">STQ</span>
+                            <span class="menu-suffix">
+                  <span class="badge badge-pill badge-primary"> 📋 </span>
+                    </span>
+                        </a>
+                        <div class="sub-menu-list">
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Adicionar Natureza</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Editar Natureza</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Excluir Natureza</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item sub-menu">
+                        <a href="#" style="text-decoration: none;">
+                    <span class="menu-icon">
                       <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
                                   fill="currentcolor"
                                   d="M0 24C0 10.7 10.7 0 24 0H616c13.3 0 24 10.7 24 24s-10.7 24-24 24H24C10.7 48 0 37.3 0 24zM0 488c0-13.3 10.7-24 24-24H616c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zM83.2 160a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM32 320c0-35.3 28.7-64 64-64h96c12.2 0 23.7 3.4 33.4 9.4c-37.2 15.1-65.6 47.2-75.8 86.6H64c-17.7 0-32-14.3-32-32zm461.6 32c-10.3-40.1-39.6-72.6-77.7-87.4c9.4-5.5 20.4-8.6 32.1-8.6h96c35.3 0 64 28.7 64 64c0 17.7-14.3 32-32 32H493.6zM391.2 290.4c32.1 7.4 58.1 30.9 68.9 61.6c3.5 10 5.5 20.8 5.5 32c0 17.7-14.3 32-32 32h-224c-17.7 0-32-14.3-32-32c0-11.2 1.9-22 5.5-32c10.5-29.7 35.3-52.8 66.1-60.9c7.8-2.1 16-3.1 24.5-3.1h96c7.4 0 14.7 .8 21.6 2.4zm44-130.4a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM321.6 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/></svg></i>
                     </span>
                             <span class="menu-title">Chefia</span>
+                            <span class="menu-suffix">
+                  <span class="badge badge-pill badge-primary"> ⚡️ </span>
+                    </span>
+                        </a>
+                        <div class="sub-menu-list">
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Estatisticas Ocorrencias</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Verificar Ocorrências</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Total de Cadastro</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Total de Pendencias</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Total de Encerramento</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item sub-menu">
+                        <a href="#" style="text-decoration: none;">
+                    <span class="menu-icon">
+                      <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentcolor" d="M0 48C0 21.5 21.5 0 48 0H336c26.5 0 48 21.5 48 48V207l-42.4 17H304 272c-8.8 0-16 7.2-16 16v32 24.2V304c0 .9 .1 1.7 .2 2.6c2.3 58.1 24.1 144.8 98.7 201.5c-5.8 2.5-12.2 3.9-18.9 3.9H240V432c0-26.5-21.5-48-48-48s-48 21.5-48 48v80H48c-26.5 0-48-21.5-48-48V48zM80 224c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H80zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM64 112v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zM176 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H176zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H272c-8.8 0-16 7.2-16 16zM423.1 225.7c5.7-2.3 12.1-2.3 17.8 0l120 48C570 277.4 576 286.2 576 296c0 63.3-25.9 168.8-134.8 214.2c-5.9 2.5-12.6 2.5-18.5 0C313.9 464.8 288 359.3 288 296c0-9.8 6-18.6 15.1-22.3l120-48zM527.4 312L432 273.8V461.7c68.2-33 91.5-99 95.4-149.7z"/></svg></i>
+                    </span>
+                            <span class="menu-title">COMANDO COPOM</span>
                             <span class="menu-suffix">
                   <span class="badge badge-pill badge-primary"> ⭐️ </span>
                     </span>
@@ -575,7 +647,7 @@
                             <ul>
                                 <li class="menu-item">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Enada</span>
+                                        <span class="menu-title">Redefinir senha</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">

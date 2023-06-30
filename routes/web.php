@@ -37,4 +37,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
     Route::get('/despachador', [\App\Http\Controllers\Despachador::class,'index'])->name('despachador');
+
 });

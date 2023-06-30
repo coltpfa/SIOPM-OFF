@@ -7,7 +7,7 @@
     </style>
 @endsection
 @section('content')
-    <div class="container d-flex justify-content-center mt-5">
+    <div class="container d-flex justify-content-center mt-8">
         <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5" style="max-width: 1500px;">
             <div class="row mb-3">
                 <h2 class="title text-center">CADASTRO DE OCORRÊNCIA</h2>
