@@ -155,13 +155,31 @@
                 <form action="{{ route('auth.login.do') }}" method="POST" autocomplete="off">
                     @csrf
 
-                    <div class="row mt-3">
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary" type="submit">OBSERVAR</button>
-                            <button class="btn btn-secondary" type="button">NOVA OCORRÊNCIA</button>
-                            <button class="btn btn-danger" type="button">SAIR</button>
+
+                    <style>
+                        body, html {
+                            height: 100%;
+                        }
+
+                        .container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                        }
+                    </style>
+                    </head>
+                    <body>
+                    <div class="container">
+                        <div class="btn-group" role="group" aria-label="Botoes">
+                            <button type="button" class="btn btn-secondary">Observar todas</button>
+                            <button type="button" class="btn btn-secondary">Nova Ocorrência</button>
+                            <button type="button" class="btn btn-secondary">Sair</button>
                         </div>
                     </div>
+
+
+
                 </form>
             </div>
         </div>
