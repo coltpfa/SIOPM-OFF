@@ -10,6 +10,8 @@ window.Popper = Popper;
 
 import * as bootstrap from 'bootstrap'
 
+import 'laravel-datatables-vite';
+
 import DataTable from 'datatables.net-bs5';
 import 'datatables.net-responsive-bs5';
 

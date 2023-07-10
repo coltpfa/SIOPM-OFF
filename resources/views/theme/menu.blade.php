@@ -32,7 +32,7 @@
                         <div class="sub-menu-list">
                             <ul>
                                 <li class="menu-item">
-                                    <a href="/ocorrencia" style="text-decoration: none;">
+                                    <a href="{{route('ocorrencia')}}" style="text-decoration: none;">
                                         <span class="menu-title">Cadastro de Ocorrência </span>
                                     </a>
                                 </li>
@@ -54,7 +54,7 @@
                                         <ul>
 
                                             <li class="menu-item">
-                                                <a href="#"
+                                                <a href="#" >
                                                 <span class="menu-title">nada</span>
                                                 </a>
                                             </li>
@@ -379,7 +379,12 @@
                         <div class="sub-menu-list">
                             <ul>
                                 <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
+                                    <a href="{{route('stq.index')}}" style="text-decoration: none;">
+                                        <span class="menu-title">Listar Natureza</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{route('stq.create')}}" style="text-decoration: none;">
                                         <span class="menu-title">Adicionar Natureza</span>
                                     </a>
                                 </li>

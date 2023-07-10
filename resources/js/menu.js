@@ -1,30 +1,21 @@
-function _defineProperty(obj, key, value) {
-    if (key in obj) {
-        Object.defineProperty(obj, key, {value: value, enumerable: true, configurable: true, writable: true});
-    } else {
-        obj[key] = value;
-    }
-    return obj;
-}
-
-const ANIMATION_DURATION = 300;
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}const ANIMATION_DURATION = 300;
 
 const SIDEBAR_EL = document.getElementById("sidebar");
 
 const SUB_MENU_ELS = document.querySelectorAll(
     ".menu > ul > .menu-item.sub-menu");
 
+
 const FIRST_SUB_MENUS_BTN = document.querySelectorAll(
     ".menu > ul > .menu-item.sub-menu > a");
+
 
 const INNER_SUB_MENUS_BTN = document.querySelectorAll(
     ".menu > ul > .menu-item.sub-menu .menu-item.sub-menu > a");
 
+
 class PopperObject {
-    constructor(reference, popperTarget) {
-        _defineProperty(this, "instance", null);
-        _defineProperty(this, "reference", null);
-        _defineProperty(this, "popperTarget", null);
+    constructor(reference, popperTarget) {_defineProperty(this, "instance", null);_defineProperty(this, "reference", null);_defineProperty(this, "popperTarget", null);
         this.init(reference, popperTarget);
     }
 
@@ -39,23 +30,23 @@ class PopperObject {
                 {
                     name: "computeStyles",
                     options: {
-                        adaptive: false
-                    }
-                },
+                        adaptive: false } },
+
 
                 {
                     name: "flip",
                     options: {
-                        fallbackPlacements: ["left", "right"]
-                    }
-                }
-            ]
-        });
+                        fallbackPlacements: ["left", "right"] } }] });
+
+
+
+
 
         document.addEventListener(
             "click",
             e => this.clicker(e, this.popperTarget, this.reference),
             false);
+
 
         const ro = new ResizeObserver(() => {
             this.instance.update();
@@ -69,20 +60,21 @@ class PopperObject {
         if (
             SIDEBAR_EL.classList.contains("collapsed") &&
             !popperTarget.contains(event.target) &&
-            !reference.contains(event.target)) {
+            !reference.contains(event.target))
+        {
             this.hide();
         }
     }
 
     hide() {
         this.instance.state.elements.popper.style.visibility = "hidden";
-    }
-}
+    }}
+
 
 class Poppers {
 
-    constructor() {
-        _defineProperty(this, "subMenuPoppers", []);
+
+    constructor() {_defineProperty(this, "subMenuPoppers", []);
         this.init();
     }
 
@@ -97,7 +89,7 @@ class Poppers {
 
     togglePopper(target) {
         if (window.getComputedStyle(target).visibility === "hidden")
-            target.style.visibility = "visible"; else
+            target.style.visibility = "visible";else
             target.style.visibility = "hidden";
     }
 
@@ -112,11 +104,11 @@ class Poppers {
         this.subMenuPoppers.forEach(element => {
             element.hide();
         });
-    }
-}
+    }}
+
 
 const slideUp = (target, duration = ANIMATION_DURATION) => {
-    const {parentElement} = target;
+    const { parentElement } = target;
     parentElement.classList.remove("open");
     target.style.transitionProperty = "height, margin, padding";
     target.style.transitionDuration = `${duration}ms`;
@@ -142,10 +134,10 @@ const slideUp = (target, duration = ANIMATION_DURATION) => {
     }, duration);
 };
 const slideDown = (target, duration = ANIMATION_DURATION) => {
-    const {parentElement} = target;
+    const { parentElement } = target;
     parentElement.classList.add("open");
     target.style.removeProperty("display");
-    let {display} = window.getComputedStyle(target);
+    let { display } = window.getComputedStyle(target);
     if (display === "none") display = "block";
     target.style.display = display;
     const height = target.offsetHeight;
@@ -231,10 +223,13 @@ defaultOpenMenus.forEach(element => {
 FIRST_SUB_MENUS_BTN.forEach(element => {
     element.addEventListener("click", () => {
         if (SIDEBAR_EL.classList.contains("collapsed"))
-            PoppersInstance.togglePopper(element.nextElementSibling); else {
+            PoppersInstance.togglePopper(element.nextElementSibling);else
+        {
             const parentMenu = element.closest(".menu.open-current-submenu");
             if (parentMenu)
-                parentMenu.querySelectorAll(":scope > ul > .menu-item.sub-menu > a").forEach(
+                parentMenu.
+                querySelectorAll(":scope > ul > .menu-item.sub-menu > a").
+                forEach(
                     (el) =>
                         window.getComputedStyle(el.nextElementSibling).display !==
                         "none" && slideUp(el.nextElementSibling));
@@ -253,23 +248,28 @@ INNER_SUB_MENUS_BTN.forEach(element => {
     });
 });
 
+
+
+
+
+
 // Obtém o elemento de link para os ramais
-let ramaisLink = document.getElementById("ramais-link");
+var ramaisLink = document.getElementById("ramais-link");
 
 // Adiciona um ouvinte de evento de clique ao elemento de link
-ramaisLink.addEventListener("click", function (event) {
+ramaisLink.addEventListener("click", function(event) {
     event.preventDefault(); // Evita que o link redirecione para outra página
 
     // Cria a janela pop-up
-    let popup = document.createElement("div");
+    var popup = document.createElement("div");
     popup.classList.add("popup");
 
     // Cria a imagem
-    let foto = document.createElement("img");
+    var foto = document.createElement("img");
     foto.src = "https://raw.githubusercontent.com/ColtSeals/caratergeral/main/20230608_141758.png"; // Substitua pelo caminho correto da imagem
     popup.appendChild(foto);
 
-    let listaRamais = document.createElement("ul");
+    var listaRamais = document.createElement("ul");
     listaRamais.innerHTML = `
       <li class="destaque">Supervisao 190</li>
       <li> 3161 - 3162 - 3163 </li>
@@ -289,7 +289,7 @@ ramaisLink.addEventListener("click", function (event) {
     popup.appendChild(listaRamais);
 
     // Cria a sobreposição transparente escurecida
-    let overlay = document.createElement("div");
+    var overlay = document.createElement("div");
     overlay.classList.add("overlay");
 
     // Adiciona a janela pop-up e a sobreposição ao corpo do documento
@@ -297,11 +297,8 @@ ramaisLink.addEventListener("click", function (event) {
     document.body.appendChild(overlay);
 
     // Adiciona um ouvinte de evento de clique à sobreposição
-    overlay.addEventListener("click", function () {
+    overlay.addEventListener("click", function() {
         document.body.removeChild(popup);
         document.body.removeChild(overlay);
     });
 });
-
-
-

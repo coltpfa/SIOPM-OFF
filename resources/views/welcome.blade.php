@@ -6,9 +6,7 @@
     <title>{{ env('APP_NAME', "Laravel") }}</title>
     @vite([ 'resources/js/app.js'])
     @yield('css')
-    <head>
 
-    </head>
 <body>
 
 

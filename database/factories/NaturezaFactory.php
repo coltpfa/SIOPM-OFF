@@ -17,7 +17,8 @@ class NaturezaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'code'=>$this->faker->word,
+            'references'=>$this->faker->text,
         ];
     }
 }

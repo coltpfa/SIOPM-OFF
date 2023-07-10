@@ -22,20 +22,28 @@ Route::group(['as' => 'auth.'], function () {
 
 Route::group(['middleware' => ['auth']], function () {
 
-    Route::group(['prefix'=>'usuarios','as'=>'users.'],function(){
-        Route::get('/',[\App\Http\Controllers\Users::class, 'index'])->name('index');
-        Route::get('/cadastro',[\App\Http\Controllers\Users::class,'create'])->name('cadastro');
-        Route::post('/store',[\App\Http\Controllers\Users::class,'store'])->name('store');
-        Route::get('/editando/{id}',[\App\Http\Controllers\Users::class,'edit'])->name('edit');
-        Route::put('/update/{id}',[\App\Http\Controllers\Users::class,'update'])->name('update');
-        Route::get('/delete/{id}',[\App\Http\Controllers\Users::class,'destroy'])->name('delete');
-        Route::post('/set-theme',[\App\Http\Controllers\Users::class,'setTheme'])->name('set-theme');
+    Route::group(['prefix' => 'usuarios', 'as' => 'users.'], function () {
+        Route::get('/', [\App\Http\Controllers\Users::class, 'index'])->name('index');
+        Route::get('/cadastro', [\App\Http\Controllers\Users::class, 'create'])->name('cadastro');
+        Route::post('/store', [\App\Http\Controllers\Users::class, 'store'])->name('store');
+        Route::get('/editando/{id}', [\App\Http\Controllers\Users::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [\App\Http\Controllers\Users::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [\App\Http\Controllers\Users::class, 'destroy'])->name('delete');
+        Route::post('/set-theme', [\App\Http\Controllers\Users::class, 'setTheme'])->name('set-theme');
     });
 
-    Route::get('/dash',[\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');
-    Route::post('/dash',[\App\Http\Controllers\AuthController::class, 'dashAction'])->name('dash.do');
+    Route::group(['prefix' => 'stq', 'as' => 'stq.'], function () {
+        route::get('/', [\App\Http\Controllers\NaturezaController::class, 'index'])->name('index');
+        route::get('/cadastrar', [\App\Http\Controllers\NaturezaController::class, 'create'])->name('create');
+        route::post('/store', [\App\Http\Controllers\NaturezaController::class, 'store'])->name('store');
+        route::get('/editando/{id}', [\App\Http\Controllers\NaturezaController::class, 'edit'])->name('edit');
+        route::put('/update/{id}', [\App\Http\Controllers\NaturezaController::class, 'update'])->name('update');
+    });
 
-    Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class,'index'])->name('ocorrencia');
-    Route::get('/despachador', [\App\Http\Controllers\Despachador::class,'index'])->name('despachador');
+    Route::get('/dash', [\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');
+    Route::post('/dash', [\App\Http\Controllers\AuthController::class, 'dashAction'])->name('dash.do');
+
+    Route::get('/ocorrencia', [\App\Http\Controllers\Ocorrencia::class, 'index'])->name('ocorrencia');
+    Route::get('/despachador', [\App\Http\Controllers\Despachador::class, 'index'])->name('despachador');
 
 });

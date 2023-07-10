@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>{{ env('APP_NAME', "SIOPM-OFF") }}</title>
 
-
-
     @hasSection('css')
         @yield('css')
     @endif
@@ -51,7 +49,8 @@
     </div>
 </div>
 <!-- partial -->
-@vite([ 'resources/js/app.js','resources/js/menu.js']);
+@vite([ 'resources/js/app.js','resources/js/menu.js'])
+
 <script>
     function setTheme(theme) {
         const body = document.querySelector('body');
