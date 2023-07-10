@@ -23,7 +23,7 @@ class NaturezaDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function(Natureza $model) {
-                return "<a href='".route('stq.edit',$model->id)."' class='btn btn-info btn-sm'>Editar</a>";
+                return "<a href='".route('stq.edit',$model->id)."' class='btn btn-info btn-sm me-1 mb-1'>Editar</a><a href='".route('stq.delete',$model->id)."' class='btn btn-danger btn-sm'>Excluir</a>";
             })
             ->editColumn('created_at', function(Natureza $model) {
                 return $model->created_at->format('d/m/Y H:i:s');

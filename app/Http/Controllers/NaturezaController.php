@@ -70,6 +70,9 @@ class NaturezaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $stq = Natureza::findOrFail($id);
+        $stq->delete();
+
+        return redirect()->route('stq.index')->with(['message'=> 'Natureza excluída com sucesso!', 'color'=>'success']);
     }
 }

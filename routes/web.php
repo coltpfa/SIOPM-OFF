@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
         route::post('/store', [\App\Http\Controllers\NaturezaController::class, 'store'])->name('store');
         route::get('/editando/{id}', [\App\Http\Controllers\NaturezaController::class, 'edit'])->name('edit');
         route::put('/update/{id}', [\App\Http\Controllers\NaturezaController::class, 'update'])->name('update');
+        route::get('/delete/{id}', [\App\Http\Controllers\NaturezaController::class, 'destroy'])->name('delete');
     });
 
     Route::get('/dash', [\App\Http\Controllers\AuthController::class, 'dash'])->name('dash');
