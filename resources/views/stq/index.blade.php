@@ -3,7 +3,7 @@
 
 
     <div class="my-5 d-flex justify-content-between align-content-between">
-        <h1>Listando Natureza de Ocorrencias</h1>
+        <h1>Listando Natureza</h1>
         <div>
             <a href="{{route('stq.create')}}" class="btn btn-success btn-lg">Novo</a>
         </div>
