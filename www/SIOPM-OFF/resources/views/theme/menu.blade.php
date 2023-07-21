@@ -46,123 +46,7 @@
                                         <span class="menu-title">Pesquisar Ocorrência</span>
                                     </a>
                                 </li>
-                                <li class="menu-item sub-menu">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Mais Opcões</span>
-                                    </a>
-                                    <div class="sub-menu-list">
-                                        <ul>
 
-                                            <li class="menu-item">
-                                                <a href="#" >
-                                                <span class="menu-title">nada</span>
-                                                </a>
-                                            </li>
-
-
-                                            <li class="menu-item">
-                                                <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Select</span>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item sub-menu">
-                                                <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">More</span>
-                                                </a>
-                                                <div class="sub-menu-list">
-                                                    <ul>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">CheckBox</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Radio</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item sub-menu">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Want more ?</span>
-                                                                <span class="menu-suffix">&#x1F914;</span>
-                                                            </a>
-                                                            <div class="sub-menu-list">
-                                                                <ul>
-                                                                    <li class="menu-item">
-                                                                        <a href="#" style="text-decoration: none;">
-                                                                                <span
-                                                                                    class="menu-prefix">&#127881;</span>
-                                                                            <span
-                                                                                class="menu-title">You made it </span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="menu-item sub-menu">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">teste</span>
-                                    </a>
-                                    <div class="sub-menu-list">
-                                        <ul>
-                                            <li class="menu-item">
-                                                <a href="#">
-                                                    <span class="menu-title">nada</span>
-                                                </a>
-                                            </li>
-
-
-                                            <li class="menu-item">
-                                                <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Select</span>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item sub-menu">
-                                                <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">More</span>
-                                                </a>
-                                                <div class="sub-menu-list">
-                                                    <ul>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">CheckBox</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Radio</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item sub-menu">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Want more ?</span>
-                                                                <span class="menu-suffix">&#x1F914;</span>
-                                                            </a>
-                                                            <div class="sub-menu-list">
-                                                                <ul>
-                                                                    <li class="menu-item">
-                                                                        <a href="#" style="text-decoration: none;">
-                                                                                <span
-                                                                                    class="menu-prefix">&#127881;</span>
-                                                                            <span
-                                                                                class="menu-title">You made it </span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -173,7 +57,7 @@
                                   fill="currentcolor"
                                   d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z"/></svg></i>
                     </span>
-                            <span class="menu-title">Controlador</span>
+                            <span class="menu-title">Despachador</span>
                             <span class="menu-suffix">
                   <span class="badge badge-pill badge-primary"> 🚨 </span>
                     </span>
@@ -196,10 +80,16 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Mais Opções</span>
+                                    <a href="/despachador" style="text-decoration: none;">
+                                        <span class="menu-title">Gerar Ocorrência</span>
                                     </a>
                                 </li>
+                                <li class="menu-item">
+                                    <a href="/despachador" style="text-decoration: none;">
+                                        <span class="menu-title">Pesquisar Ocorrências</span>
+                                    </a>
+                                </li>
+
                             </ul>
                         </div>
                     </li>
@@ -231,46 +121,20 @@
                                             </li>
                                             <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Estatisticas</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
                                                     <span class="menu-title">Ocorrências CAD</span>
                                                 </a>
                                             </li>
-                                            <li class="menu-item sub-menu">
+                                            <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">nao</span>
+                                                    <span class="menu-title">Usuários Logados</span>
                                                 </a>
-                                                <div class="sub-menu-list">
-                                                    <ul>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">CheckBox</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Radio</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item sub-menu">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Want more ?</span>
-                                                                <span class="menu-suffix">&#x1F914;</span>
-                                                            </a>
-                                                            <div class="sub-menu-list">
-                                                                <ul>
-                                                                    <li class="menu-item">
-                                                                        <a href="#" style="text-decoration: none;">
-                                                                                <span
-                                                                                    class="menu-prefix">&#127881;</span>
-                                                                            <span
-                                                                                class="menu-title">You made it </span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </li>
+
                                         </ul>
                                     </div>
                                 </li>
@@ -282,51 +146,35 @@
                                         <ul>
                                             <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Verificar CPA</span>
+                                                    <span class="menu-title">Supervisionar CPA</span>
                                                 </a>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Select</span>
+                                                    <span class="menu-title">Unir CPA</span>
                                                 </a>
                                             </li>
-                                            <li class="menu-item sub-menu">
+                                            <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">More</span>
+                                                    <span class="menu-title">Supervisão BPM/M</span>
                                                 </a>
-                                                <div class="sub-menu-list">
-                                                    <ul>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">CheckBox</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Radio</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item sub-menu">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Want more ?</span>
-                                                                <span class="menu-suffix">&#x1F914;</span>
-                                                            </a>
-                                                            <div class="sub-menu-list">
-                                                                <ul>
-                                                                    <li class="menu-item">
-                                                                        <a href="#" style="text-decoration: none;">
-                                                                                <span
-                                                                                    class="menu-prefix">&#127881;</span>
-                                                                            <span
-                                                                                class="menu-title">You made it </span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Unir BPM/M</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Estatisticas CPA</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Usuários Logados</span>
+                                                </a>
+                                            </li>
+
                                         </ul>
                                     </div>
                                 </li>
@@ -334,16 +182,16 @@
                         </div>
                     </li>
 
+
+
                     <li class="menu-item sub-menu">
                         <a href="#" style="text-decoration: none;">
                     <span class="menu-icon">
-                      <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
-                                  fill="currentcolor"
-                                  d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"/></svg></i>
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentcolor" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
                     </span>
-                            <span class="menu-title">Administrador</span>
+                            <span class="menu-title">Técnica</span>
                             <span class="menu-suffix">
-                  <span class="badge badge-pill badge-primary"> 👤 </span>
+                  <span class="badge badge-pill badge-primary"> ⚙️ </span>
                     </span>
                         </a>
                         <div class="sub-menu-list">
@@ -366,6 +214,7 @@
                             </ul>
                         </div>
                     </li>
+
                     <li class="menu-item sub-menu">
                         <a href="#" style="text-decoration: none;">
                     <span class="menu-icon">
@@ -373,35 +222,150 @@
                     </span>
                             <span class="menu-title">STQ</span>
                             <span class="menu-suffix">
-                  <span class="badge badge-pill badge-primary"> 📋 </span>
+                  <span class="badge badge-pill badge-primary"> 📊 </span>
                     </span>
                         </a>
                         <div class="sub-menu-list">
                             <ul>
-                                <li class="menu-item">
-                                    <a href="{{route('stq.index')}}" style="text-decoration: none;">
-                                        <span class="menu-title">Listar Natureza</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{route('stq.create')}}" style="text-decoration: none;">
-                                        <span class="menu-title">Adicionar Natureza</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
+
+
+
+                                <li class="menu-item sub-menu">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Editar Natureza</span>
+                                        <span class="menu-title">Gerenciar Despacho</span>
                                     </a>
+                                    <div class="sub-menu-list">
+                                        <ul>
+                                            <li class="menu-item">
+                                                <a href="#">
+                                                    <span class="menu-title">Cidades</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="menu-item">
+                                                <a href="#">
+                                                    <span class="menu-title">BPM/M</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#">
+                                                    <span class="menu-title">Ramais</span>
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
                                 </li>
-                                <li class="menu-item">
+
+                                <li class="menu-item sub-menu">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Excluir Natureza</span>
+                                        <span class="menu-title">Gerenciar Natureza</span>
                                     </a>
+                                    <div class="sub-menu-list">
+                                        <ul>
+
+                                            <li class="menu-item">
+                                                <a href="{{route('stq.index')}}" style="text-decoration: none;">
+                                                    <span class="menu-title">Listar Natureza</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="{{route('stq.create')}}" style="text-decoration: none;">
+                                                    <span class="menu-title">Adicionar Natureza</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Editar Natureza</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Excluir Natureza</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
+
+
+
+                                <li class="menu-item sub-menu">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Gerenciar Instruções</span>
+                                    </a>
+                                    <div class="sub-menu-list">
+                                        <ul>
+
+                                            <li class="menu-item">
+                                                <a href="#" >
+                                                    <span class="menu-title">Instruções Sistema</span>
+                                                </a>
+                                            </li>
+
+
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Instruções Cadastro</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" >
+                                                    <span class="menu-title">Ordem de Serviço</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="menu-item">
+                                                <a href="#" >
+                                                    <span class="menu-title">Instruções ICC</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+
 
                             </ul>
                         </div>
                     </li>
+
+
+
+                    <li class="menu-item sub-menu">
+                        <a href="#" style="text-decoration: none;">
+                    <span class="menu-icon">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentcolor" d="M160 0c-23.7 0-44.4 12.9-55.4 32H48C21.5 32 0 53.5 0 80V400c0 26.5 21.5 48 48 48H192V176c0-44.2 35.8-80 80-80h48V80c0-26.5-21.5-48-48-48H215.4C204.4 12.9 183.7 0 160 0zM272 128c-26.5 0-48 21.5-48 48V448v16c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V243.9c0-12.7-5.1-24.9-14.1-33.9l-67.9-67.9c-9-9-21.2-14.1-33.9-14.1H320 272zM160 40a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                    </span>
+                            <span class="menu-title">Certidões</span>
+                            <span class="menu-suffix">
+                  <span class="badge badge-pill badge-primary"> 📋 </span>
+                    </span>
+                        </a>
+
+                        <div class="sub-menu-list">
+                            <ul>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Verificar Ocorrências</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Deletar Ocorrências</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+
+
                     <li class="menu-item sub-menu">
                         <a href="#" style="text-decoration: none;">
                     <span class="menu-icon">
@@ -423,76 +387,20 @@
                                 </li>
                                 <li class="menu-item">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Verificar Ocorrências</span>
+                                        <span class="menu-title">Selecionar BPM/M</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Cadastro</span>
+                                        <span class="menu-title">Usuários Logados</span>
                                     </a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Pendencias</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Encerramento</span>
-                                    </a>
-                                </li>
+
 
                             </ul>
                         </div>
                     </li>
-                    <li class="menu-item sub-menu">
-                        <a href="#" style="text-decoration: none;">
-                    <span class="menu-icon">
-                      <i><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentcolor" d="M0 48C0 21.5 21.5 0 48 0H336c26.5 0 48 21.5 48 48V207l-42.4 17H304 272c-8.8 0-16 7.2-16 16v32 24.2V304c0 .9 .1 1.7 .2 2.6c2.3 58.1 24.1 144.8 98.7 201.5c-5.8 2.5-12.2 3.9-18.9 3.9H240V432c0-26.5-21.5-48-48-48s-48 21.5-48 48v80H48c-26.5 0-48-21.5-48-48V48zM80 224c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H80zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM64 112v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zM176 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H176zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H272c-8.8 0-16 7.2-16 16zM423.1 225.7c5.7-2.3 12.1-2.3 17.8 0l120 48C570 277.4 576 286.2 576 296c0 63.3-25.9 168.8-134.8 214.2c-5.9 2.5-12.6 2.5-18.5 0C313.9 464.8 288 359.3 288 296c0-9.8 6-18.6 15.1-22.3l120-48zM527.4 312L432 273.8V461.7c68.2-33 91.5-99 95.4-149.7z"/></svg></i>
-                    </span>
-                            <span class="menu-title">COMANDO COPOM</span>
-                            <span class="menu-suffix">
-                  <span class="badge badge-pill badge-primary"> ⭐️ </span>
-                    </span>
-                        </a>
-                        <div class="sub-menu-list">
-                            <ul>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Estatisticas Ocorrencias</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Verificar Ocorrências</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Cadastro</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Pendencias</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Total de Encerramento</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Excluir Ocorrências</span>
-                                        <span class="menu-suffix">
-                  <span class="badge badge-pill badge-primary"> ⚠️ </span>
-                    </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+
 
                     <li class="menu-header" style="padding-top: 20px"><span> EXTRA </span></li>
 
@@ -511,9 +419,15 @@
                         <div class="sub-menu-list">
                             <ul>
                                 <li class="menu-item">
+                                    <a href="#" style="text-decoration: none;"
+                                       target="_blank">
+                                        <span class="menu-title">Mapa Copom 2023</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
                                     <a href="https://www.google.com/maps/" style="text-decoration: none;"
                                        target="_blank">
-                                        <span class="menu-title">Mapa Copom</span>
+                                        <span class="menu-title">Google Maps</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -561,21 +475,11 @@
                             <span class="menu-title">Instruções</span>
                             <span class="menu-suffix">
                       <span class="badge secondary"> 💻 </span>
-                    </span>
+                                        </span>
                         </a>
-
                         <div class="sub-menu-list">
                             <ul>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Intruções de Cadastro</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Instruções do Sistema</span>
-                                    </a>
-                                </li>
+
                                 <li class="menu-item sub-menu">
                                     <a href="#" style="text-decoration: none;">
                                         <span class="menu-title">Instruções Gerais</span>
@@ -584,57 +488,49 @@
                                         <ul>
                                             <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Input</span>
+                                                    <span class="menu-title">Sistema</span>
                                                 </a>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">Select</span>
+                                                    <span class="menu-title">cadastro Ocorrências</span>
                                                 </a>
                                             </li>
-                                            <li class="menu-item sub-menu">
+
+
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item sub-menu">
+                                    <a href="#" style="text-decoration: none;">
+                                        <span class="menu-title">Instruções Especificas</span>
+                                    </a>
+                                    <div class="sub-menu-list">
+                                        <ul>
+                                            <li class="menu-item">
                                                 <a href="#" style="text-decoration: none;">
-                                                    <span class="menu-title">More</span>
+                                                    <span class="menu-title">Instruções Sistema</span>
                                                 </a>
-                                                <div class="sub-menu-list">
-                                                    <ul>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">CheckBox</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Radio</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item sub-menu">
-                                                            <a href="#" style="text-decoration: none;">
-                                                                <span class="menu-title">Want more ?</span>
-                                                                <span class="menu-suffix">&#x1F914;</span>
-                                                            </a>
-                                                            <div class="sub-menu-list">
-                                                                <ul>
-                                                                    <li class="menu-item">
-                                                                        <a href="#" style="text-decoration: none;">
-                                                                                <span
-                                                                                    class="menu-prefix">&#127881;</span>
-                                                                            <span
-                                                                                class="menu-title">You made it </span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Ordem de Serviço</span>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="#" style="text-decoration: none;">
+                                                    <span class="menu-title">Instruções ICC</span>
+                                                </a>
+                                            </li>
+
+
                                         </ul>
                                     </div>
                                 </li>
                             </ul>
-
                         </div>
+                    </li>
+
                     <li class="menu-header" style="padding-top: 20px"><span> CONFIGURAÇÕES</span></li>
                     <li class="menu-item sub-menu">
                         <a href="#" style="text-decoration: none;">
@@ -652,37 +548,15 @@
                             <ul>
                                 <li class="menu-item">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">Redefinir senha</span>
+                                        <span class="menu-title">Alterar Senha</span>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">nada</span>
+                                        <span class="menu-title">Perfil do Usuário</span>
                                     </a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">nada</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">kjh</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">hjg</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#" style="text-decoration: none;">
-                                        <span class="menu-title">jkh</span>
-                                        <span class="menu-suffix">
-                  <span class="badge badge-pill badge-primary"> ⚠️ </span>
-                    </span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                     </li>
