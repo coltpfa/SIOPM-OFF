@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Natureza>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Bpmm>
  */
-class NaturezaFactory extends Factory
+class BpmmFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +18,9 @@ class NaturezaFactory extends Factory
     public function definition(): array
     {
         return [
-            'code'=>$this->faker->word,
-            'references'=>$this->faker->text,
+            "name" => $this->faker->title,
+            "user_id" => User::limit(1)->first()->id,
+            "type" => "TESTE",
         ];
     }
 }

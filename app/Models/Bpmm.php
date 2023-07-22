@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Natureza extends Model
+class Bpmm extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'code',
-        'references',
+        "name",
+        "description",
+        "user_created",
+        "user_updated"
     ];
 }

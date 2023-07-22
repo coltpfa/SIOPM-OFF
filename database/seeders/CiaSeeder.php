@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Natureza;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Cia;
 
-class NaturezaSeeder extends Seeder
+class CiaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Natureza::factory()->count(60)->create();
+        Cia::factory()->count(30)->create();
     }
 }

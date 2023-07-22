@@ -51,10 +51,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function emergency()
-    {
-        return $this->belongsTo(Emergency::class);
-    }
+
 
     public function userCreated()
     {
@@ -71,6 +68,5 @@ class User extends Authenticatable
             6 => 'CHEFE OPERACIONAL',
             default => 'ATENDENTE',
         };
-
     }
 }
