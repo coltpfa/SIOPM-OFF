@@ -1,567 +1,487 @@
-@extends('theme.theme')
+<?php
 
-@section('css')
-    <style>
-        .bold-text {
-            font-weight: bold;
-            font-size: 8pt;
+use App\Models\Cadastro190;
+use Carbon\Carbon;
 
-        }
+?>
+@extends('adminlte::page')
 
-        table.table-secondary tbody td {
-            line-height: 0.1;
-        }
+@section('title', 'Despacho de Ocorrências')
 
-        /* titulo da tabela */
-        .table-fixed-header thead {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-
-        table.table-secondary {
-            font-size: 8pt; /* Defina o tamanho da fonte desejado */
-        }
-
-        table.table-bordered {
-            border-collapse: collapse;
-        }
-
-        table.table-bordered th,
-        table.table-bordered td {
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-        }
-
-        table.table-bordered th:first-child,
-        table.table-bordered td:first-child {
-            border-left: 1px solid black;
-        }
-
-        table.table-bordered th:last-child,
-        table.table-bordered td:last-child {
-            border-right: 1px solid black;
-        }
-
-        /* popup */
-        .input-prefixo {
-            margin-top: 10px;
-            width: 100%;
-            padding: 5px;
-        }
-
-        .button-container {
-            display: flex;
-        }
-
-        .clickable-row{
-            cursor: pointer;
-        }
-
-
-         body, html {
-             height: 100%;
-         }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-    </style>
-@endsection
-
-@section('content')
-    <div class="container d-flex justify-content-center mt-5">
-        <div class="d-flex justify-content-center flex-column border border-black rounded-3 shadow-lg p-5"
-             style="max-width: 1500px;">
-            <div class="row mb-3">
-                <h4 class="title text-center">CONTROLE DE OCORRENCIAS</h4>
+@section('content_header')
+<!-- Seção de cabeçalho -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Despacho de Ocorrências</h1>
+                <h6>
+                    @if (Cadastro190::where(DB::RAW('date(horario)'), Carbon::today()->toDateString())->count() != 0)
+                    Hoje - <span class="badge badge-primary right">
+                        {{Cadastro190::count()}}
+                    </span>
+                    @endif
+                </h6>
             </div>
-
-            <div class="row my-3">
-                <div class="col-12 col-md-3">
-                    <label for="inputSolicitante" class="form-label">Serviço</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off"
-                           value="{{ "Radio Patrulha porem terao diferentes tipos" }}" readonly
-                           placeholder="Digite o nome do solicitante" required>
-                </div>
-                <div class="col-12 col-md-2">
-                    <label for="inputSolicitante" class="form-label">Matricula</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->user }}"
-                           readonly required>
-                </div>
-                <div class="col-12 col-md-3">
-                    <label for="inputSolicitante" class="form-label">Controlador</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $user->name }}"
-                           readonly required>
-                </div>
-                <div class="col-12 col-md-2">
-                    <label for="inputHorario" class="form-label">Cabine</label>
-                    <input type="text" class="form-control bold-text" autocomplete="off" value="{{ $batalhao }}º BPM/M"
-                           readonly required>
-                </div>
-                <div class="col-12 col-md-2">
-                    <label for="inputHorario" class="form-label">Horas:</label>
-                    <span id="horarioAtual" class="form-control bold-text" readonly>{{ date('H:i:s') }}</span>
-                </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">
+                        Despacho de Ocorrências
+                    </li>
+                </ol>
             </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
 
+<!-- add daniels -->
+<div class="container-fluid">
 
-            <div class="row">
-                <div class="col-12 col-md-2">
-                    <h6 class="title text-center">US</h6>
-                    <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
-                        <table class="table table-secondary table-striped-columns table-hover table-fixed-header">
-                            <thead>
-                            <tr>
-                                <th style="width: 5%;">Viatura</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>28100</td>
-                            </tr>
-                            <tr>
-                                <td>28250</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a class="btn btn-app bg-success" data-toggle="modal" data-target="#modal-observar">
+                <span class="badge bg-purple"></span>
+                <i class="fas fa-check"></i> Observar
+            </a>
+            @include('modal.despachador.despachador_observar')
 
-                <div class="col-12 col-md-10">
-                    <h6 class="title text-center">Ocorrências Pendentes</h6>
-                    <div class="table-responsive" style="max-height: 400px; max-width: 100%;">
-                        <table class="table table-secondary table-hover table-fixed-header">
-                            <thead>
-                            <tr>
-                                <th style="width: 1%;" class="text-center">⚡️</th>
-                                <th style="width: 60%;" data-order="endereco">ENDEREÇO</th>
-                                <th style="width: 1%;" data-order="nat">NAT</th>
-                                <th style="width: 40%;" data-order="opm">OPM</th>
-                                <th style="width: 30%;" data-order="espera">ESPERA</th>
-                                <th style="width: 1%;" data-order="oco">OCO</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($opcoes as $opcao)
-                                <tr class="clickable-row {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">
-                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['gravidade'] }}</td>
-                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['endereco'] }}</td>
-                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['nat'] }}</td>
-                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}" >{{ $opcao['opm'] }}</td>
-                                    <td class=" {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['espera'] }}</td>
-                                    <td class="text-center  {{$opcao['gravidade'] == 'U' ? 'bg-danger' : ''}}">{{ $opcao['oco'] }}</td>
-                                </tr>
+            <a class="btn btn-app bg-danger" data-toggle="modal" data-target="#modal-gerarocorrencia">
+                <span class="badge bg-teal"></span>
+                <i class="fas fa-plus"></i> Gerar
+            </a>
+            @include('modal.despachador.despachador_gerarocorrencia')
 
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <a class="btn btn-app bg-secondary" href="http://127.0.0.1:8000/home">
+                <span class="badge bg-success"></span>
+                <i class="fas fa-users"></i> Alterar
+            </a>
+        </div>
+
+        <div class="col-md-1">
+            <div class="card card-danger card-outline">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%; text-align: center;">VTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $n = 1 @endphp
+                        @foreach ($ocorrencias as $ocorrencia)
+                        <tr>
+                            <td align="center">10205</td>
+
+                            <!-- SERA UM NUMERO ALEATORIO DE 0 A INFINITO PARA CADA UMA SENDO NUMEROS UNICOS E QUE SEMPRE AS 00:00 ZERA A CONTAGEM NOVAMENTE -->
+                        </tr>
+                        @php $n++ @endphp
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
+        </div>
 
-            <div class="row">
-                <form action="{{ route('auth.login.do') }}" method="POST" autocomplete="off">
-                    @csrf
+        <div class="col-md-9">
+            <div class="card card-danger card-outline">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 2%;">
+                                <input type="checkbox" id="select-all-checkbox">
+                            </th>
+                            <th style="width: 1%; text-align: center;">⚡️</th>
+                            <th style="width: 40%;">Endereço</th>
+                            <th style="width: 2%; text-align: center;">Nat</th>
+                            <th style="width: 19%;">OPM</th>
+                            <th style="width: 10%; text-align: center;">Espera</th>
+                            <th style="width: 6%; text-align: center;">Oco</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $n = 1 @endphp
+                        @foreach ($ocorrencias as $ocorrencia)
+                        <tr>
+                            <td><input type="checkbox" class="despacho-checkbox"></td>
+                            <td align="center">N</td>
+                            <td>{{$ocorrencia["endereco"]}}, {{$ocorrencia["numero"]}}</td>
+                            <td align="center">{{ substr($ocorrencia["naturezaocorrencia"], 0, 3) }}</td>
+                            <!-- Exibe as três primeiras letras da naturezaocorrencia -->
+                            <td>
+                                @php
+                                // Obtenha o valor da ocorrência
+                                $valor = $ocorrencia["bpmm"];
+
+                                // Remova tudo que está antes do primeiro "_"
+                                $valor = substr($valor, strpos($valor, '_') + 1);
+
+                                // Substitua o segundo "_" por espaço
+                                $valor = str_replace('_', ' ', $valor);
+                                @endphp
+                                {{ $valor }}
+                            </td>
+
+                            <td id="tempo_decorrido_{{$n}}">
+                            <?php
+                            $createdAt = $ocorrencia['horario'];
+                            $currentDateTime = Carbon::now();
+                            $timeDifference = $currentDateTime->diff($createdAt);
+
+                            $hours = $timeDifference->format('%h');
+                            $minutes = $timeDifference->format('%i');
+                            $seconds = $timeDifference->format('%s');
+
+                            ?>
+                            <?php
+
+$serverTime = Carbon::now();
+echo $serverTime;
+
+                            ?>
+                            {{$hours.':'.$minutes.':'.$seconds}}
+                            </td>
+                            <td align="center">185</td>
+                            <!-- SERA UM NUMERO ALEATORIO DE 0 A INFINITO PARA CADA UMA SENDO NUMEROS UNICOS E QUE SEMPRE AS 00:00 ZERA A CONTAGEM NOVAMENTE -->
+                        </tr>
+                        @php $n++ @endphp
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal-detalhes">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <style>
+                                    .modal-content-full-width {
+                                        width: 100%;
+                                    }
+
+                                    .modal-textarea-container {
+                                        width: 100%;
+                                    }
+                                </style>
+                                <div class="modal-content modal-content-full-width">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Detalhes da Ocorrência</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Conteúdo do modal -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p><strong>Solicitante:</strong> {{$ocorrencia["solicitante"]}}</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p><strong>Telefone:</strong> {{$ocorrencia["telefone"]}}</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p><strong>Cidade:</strong> {{$ocorrencia["cidade"]}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p><strong>Endereço:</strong> {{$ocorrencia["endereco"]}}, {{$ocorrencia["numero"]}}</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p><strong>Complemento:</strong> {{$ocorrencia["complemento"]}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <p><strong>Bairro:</strong> {{$ocorrencia["bairro"]}}</p>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p><strong>Referência:</strong> {{$ocorrencia["referencia"]}}</p>
+                                                    </div>
+                                                </div>
 
 
 
-                    </head>
-                    <body>
-                    <div class="container">
-                        <div class="btn-group" role="group" aria-label="Botoes">
-                            <button type="button" class="btn btn-secondary">Observar todas</button>
-                            <button type="button" class="btn btn-secondary">Nova Ocorrência</button>
-                            <button type="button" class="btn btn-secondary">Sair</button>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <p></p>
+                                                <!-- Botões do modal (exemplos de botões) -->
+                                                <style>
+                                                    .btn-app {
+                                                        width: 100px;
+                                                        height: 60px;
+                                                        font-size: 10px;
+                                                    }
+
+                                                    /* Reduz o tamanho do ícone */
+                                                    .btn-app i {
+                                                        font-size: 20px;
+                                                    }
+
+                                                    /* Centraliza o ícone e o texto verticalmente */
+                                                    .btn-app .btn-inner-container {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        flex-direction: column;
+                                                        height: 100%;
+                                                    }
+                                                </style>
+
+                                                <a class="btn btn-app bg-secondary" data-toggle="modal" data-target="#modal-novo-2">
+                                                    <span class="badge bg-purple"></span>
+                                                    <div class="btn-inner-container">
+                                                        <i class="fas fa-comment"></i>
+                                                        <span>Observar</span>
+                                                    </div>
+                                                </a>
+                                                @include('modal.despachador.despachador_observarunica')
+
+                                                <a class="btn btn-app bg-success" data-toggle="modal" data-target="#modal-novo-2">
+                                                    <span class="badge bg-purple"></span>
+                                                    <div class="btn-inner-container">
+                                                        <i class="fas fa-users"></i>
+                                                        <span>Apoio</span>
+                                                    </div>
+                                                </a>
+                                                @include('modal.despachador.despachador_observarunica')
+
+                                                <a class="btn btn-app bg-danger" data-toggle="modal" data-target="#modal-novo-4">
+                                                    <div class="btn-inner-container">
+                                                        <i class="fas fa-times"></i>
+                                                        <span>Abortar</span>
+                                                    </div>
+                                                </a>
+                                                @include('modal.despachador.despachador_observarunica')
+
+                                                <a class="btn btn-app bg-warning" data-toggle="modal" data-target="#modal-novo-5">
+                                                    <span class="badge bg-purple"></span>
+                                                    <div class="btn-inner-container">
+                                                        <i class="fas fa-arrow-up"></i>
+                                                        <span>Redirecionar</span>
+                                                    </div>
+                                                </a>
+                                                @include('modal.despachador.despachador_redirecionarocorrencia')
+
+                                                <a class="btn btn-app bg-info" data-toggle="modal" data-target="#modal-novo-5">
+                                                    <span class="badge bg-purple"></span>
+                                                    <div class="btn-inner-container">
+                                                        <i class="fas fa-street-view"></i>
+                                                        <span>Empenhar</span>
+                                                    </div>
+                                                </a>
+                                                @include('modal.despachador.despachador_empenhar')
+
+
+
+
+
+
+
+
+                                                <!-- Adicione aqui outros botões caso necessário -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-
-
-                </form>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 
-@endsection
-@push('js')
-    <script>
-        // Função para criar um botão
-        function createButton(text, id, clickHandler) {
-            var button = document.createElement('button');
-            button.textContent = text;
-            button.setAttribute('id', id);
-            button.addEventListener('click', clickHandler);
-            return button;
-        }
+@stop
 
-        // Função para exibir o popup de Observar
-        function showObservarPopup() {
-            // Crie o elemento do popup
-            var popup = document.createElement('div');
-            popup.classList.add('popup');
-            popup.style.backgroundColor = 'white'; // Defina a cor de fundo como branco
-            popup.style.color = 'black'; // Defina a cor do texto como preto
+@section('content')
+<?php
+$cadastro190 = App\Models\Cadastro190::all();
+?>
 
-// Crie o campo de input para texto aleatório
-            var textoInput = document.createElement('textarea');
-            textoInput.setAttribute('placeholder', 'Digite um texto aleatório');
-            textoInput.style.width = '300px'; // Defina a largura desejada
-            textoInput.style.height = '100px'; // Defina a altura desejada
 
-            // Crie as frases prontas com opção de marcação única
-            var frasesProntas = [
-                'CFP E CGP CIENTE DAS PENDENCIAS',
-                'CFP DETERMINOU MANTER OCORRENCIAS PENDENTES',
-                'CFP INFORMOU QUE ASSIM QUE TIVER VTR DISPONIVEL EMPENHAR',
-                'CFP DETERMINOU AGUARDAR REITERAÇÃO',
-                'FALTA DE VIATURA CGP E CFP CIENTE',
-                'CGP E CFP CIENTE NADA DETERMINOU'
-            ];
 
-            var frasesContainer = document.createElement('div');
 
-            var selectedCheckbox = null;
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            frasesProntas.forEach(function (frase) {
-                var fraseCheckbox = document.createElement('input');
-                fraseCheckbox.setAttribute('type', 'checkbox');
-                fraseCheckbox.addEventListener('change', function () {
-                    if (fraseCheckbox.checked) {
-                        if (selectedCheckbox !== null && selectedCheckbox !== fraseCheckbox) {
-                            selectedCheckbox.checked = false;
-                        }
-                        selectedCheckbox = fraseCheckbox;
-                        textoInput.value = frase;
-                    } else {
-                        selectedCheckbox = null;
-                        textoInput.value = '';
-                    }
-                });
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    document.addEventListener("DOMContentLoaded", function() {
+        const expandirBtn = document.getElementById("expandir-btn");
+        const referenciaTextarea = document.getElementById("referencia-textarea");
+        let isExpanded = false;
 
-                var fraseLabel = document.createElement('label');
-                fraseLabel.textContent = frase;
-
-                var fraseWrapper = document.createElement('div');
-                fraseWrapper.appendChild(fraseCheckbox);
-                fraseWrapper.appendChild(fraseLabel);
-
-                frasesContainer.appendChild(fraseWrapper);
-            });
-
-            // Crie o botão "OBSERVE"
-            var observeButton = createButton('OBSERVE', 'observe', function () {
-                var texto = textoInput.value;
-                if (texto) {
-                    console.log('Texto observado:', texto);
-                } else {
-                    console.log('Nenhum texto foi digitado');
-                }
-            });
-
-            // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharObservar', function () {
-                closePopup(popup);
-            });
-
-            // Adicione os elementos ao popup
-            popup.appendChild(textoInput);
-            popup.appendChild(frasesContainer);
-            popup.appendChild(observeButton);
-            popup.appendChild(closeButton);
-
-            // Crie o overlay (fundo escuro)
-            var overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.addEventListener('click', function () {
-                closePopup(popup);
-            });
-
-            // Adicione o popup e o overlay ao corpo do documento
-            document.body.appendChild(popup);
-            document.body.appendChild(overlay);
-        }
-
-        // Função para exibir o popup de Abortar
-        function showAbortarPopup() {
-            // Crie o elemento do popup
-            var popup = document.createElement('div');
-            popup.classList.add('popup');
-            popup.style.backgroundColor = 'white'; // Defina a cor de fundo como branco
-            popup.style.color = 'black'; // Defina a cor do texto como preto
-
-            // Crie o campo de input para texto aleatório
-            var textoInput = document.createElement('textarea');
-            textoInput.setAttribute('placeholder', 'Digite um texto aleatório');
-            textoInput.style.width = '100%';
-            textoInput.style.height = '100px'; // Defina a altura desejada
-
-            // Crie as frases prontas com opção de marcação única
-            var frasesProntas = [
-                'TROTE',
-                'VIA FONE PARTE DEVIDAMENTE ORIENTADA',
-                'NÃO É OCORRENCIA DA POLICIA MILITAR',
-                'BLA BLA BLA',
-                'NAO VOU ATENDER',
-                'QUEM MANDOU MORAR EM LOCAL RUIM KKKK'
-            ];
-
-            var frasesContainer = document.createElement('div');
-
-            var selectedCheckbox = null;
-
-            frasesProntas.forEach(function (frase) {
-                var fraseCheckbox = document.createElement('input');
-                fraseCheckbox.setAttribute('type', 'checkbox');
-                fraseCheckbox.addEventListener('change', function () {
-                    if (fraseCheckbox.checked) {
-                        if (selectedCheckbox !== null && selectedCheckbox !== fraseCheckbox) {
-                            selectedCheckbox.checked = false;
-                        }
-                        selectedCheckbox = fraseCheckbox;
-                        textoInput.value = frase;
-                    } else {
-                        selectedCheckbox = null;
-                        textoInput.value = '';
-                    }
-                });
-
-                var fraseLabel = document.createElement('label');
-                fraseLabel.textContent = frase;
-
-                var fraseWrapper = document.createElement('div');
-                fraseWrapper.appendChild(fraseCheckbox);
-                fraseWrapper.appendChild(fraseLabel);
-
-                frasesContainer.appendChild(fraseWrapper);
-            });
-
-            // Crie o botão "OBSERVE"
-            var observeButton = createButton('OBSERVE', 'observe', function () {
-                var texto = textoInput.value;
-                if (texto) {
-                    console.log('Texto observado:', texto);
-                } else {
-                    console.log('Nenhum texto foi digitado');
-                }
-            });
-
-            // Crie o botão "ABORTAR"
-            var abortarButton = createButton('ABORTAR', 'abortar', function () {
-                console.log('Ação de abortar');
-            });
-
-            // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharAbortar', function () {
-                closePopup(popup);
-            });
-
-            // Adicione os elementos ao popup
-            popup.appendChild(textoInput);
-            popup.appendChild(frasesContainer);
-            popup.appendChild(observeButton);
-            popup.appendChild(abortarButton);
-            popup.appendChild(closeButton);
-
-            // Crie o overlay (fundo escuro)
-            var overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.addEventListener('click', function () {
-                closePopup(popup);
-            });
-
-            // Adicione o popup e o overlay ao corpo do documento
-            document.body.appendChild(popup);
-            document.body.appendChild(overlay);
-        }
-
-        // Função para exibir o popup de Redirecionar
-        function showRedirecionarPopup() {
-            // Crie o elemento do popup
-            var popup = document.createElement('div');
-            popup.classList.add('popup');
-            popup.style.backgroundColor = 'white'; // Defina a cor de fundo como branco
-            popup.style.color = 'black'; // Defina a cor do texto como preto
-            popup.textContent = 'Popup de Redirecionar';
-
-            // Crie um campo de texto (textarea) para observar ocorrência
-            var observarOcorrencia = document.createElement('textarea');
-            observarOcorrencia.placeholder = 'Observar Ocorrência';
-            observarOcorrencia.style.width = '100%'; // Defina a largura do textarea como 100%
-            observarOcorrencia.style.height = '200px'; // Defina a altura do textarea como 200 pixels
-            popup.appendChild(observarOcorrencia);
-
-            // Crie um select com uma lista de batalhões disponíveis
-            var selectBatalhoes = document.createElement('select');
-            var batalhoesDisponiveis = ['01º BPM/M', '02ºBPM/M', '03ºBPM/M', '04ºBPM/M', '05ºBPM/M', '06ºBPM/M', '07ºBPM/M', '08ºBPM/M', '09ºBPM/M', '10ºBPM/M', '11ºBPM/M', '12ºBPM/M', '13ºBPM/M'];
-            for (var i = 0; i < batalhoesDisponiveis.length; i++) {
-                var option = document.createElement('option');
-                option.value = batalhoesDisponiveis[i];
-                option.text = batalhoesDisponiveis[i];
-                selectBatalhoes.appendChild(option);
+        expandirBtn.addEventListener("click", function() {
+            if (isExpanded) {
+                referenciaTextarea.style.height = "100%";
+                expandirBtn.innerText = "Expandir";
+            } else {
+                referenciaTextarea.style.height = "auto";
+                expandirBtn.innerText = "Diminuir";
             }
-            popup.appendChild(selectBatalhoes);
-
-            // Crie o botão "Redirecione"
-            var redirecioneButton = createButton('Redirecione', 'redirecione', function () {
-                // Lógica para redirecionar com base nas informações selecionadas
-                var observacao = observarOcorrencia.value;
-                var batalhaoSelecionado = selectBatalhoes.value;
-                // Realize as ações necessárias com as informações fornecidas
-                console.log('Observação:', observacao);
-                console.log('Batalhão selecionado:', batalhaoSelecionado);
-                // Feche o popup
-                closePopup(popup);
-            });
-
-            // Adicione o botão "Redirecione" ao popup
-            popup.appendChild(redirecioneButton);
-
-            // Crie o botão de fechar o popup
-            var closeButton = createButton('Fechar', 'fecharRedirecionar', function () {
-                closePopup(popup);
-            });
-
-            // Adicione o botão ao popup
-            popup.appendChild(closeButton);
-
-            // Crie o overlay (fundo escuro)
-            var overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.addEventListener('click', function () {
-                closePopup(popup);
-            });
-
-            // Adicione o popup e o overlay ao corpo do documento
-            document.body.appendChild(popup);
-            document.body.appendChild(overlay);
-        }
-
-        // Manipulador de clique genérico para os botões
-        function handleButtonClick(event) {
-            var buttonId = event.target.id;
-            switch (buttonId) {
-                case 'observar':
-                    // Chame a função para exibir o popup de Observar
-                    showObservarPopup();
-                    break;
-                case 'abortar':
-                    // Chame a função para exibir o popup de Abortar
-                    showAbortarPopup();
-                    break;
-
-                case 'redirecionar':
-                    // Chame a função para exibir o popup de Redirecionar
-                    showRedirecionarPopup();
-                    break;
-                case 'fechar':
-                    // Lógica para o botão "Fechar"
-                    console.log('Botão "Fechar" clicado');
-                    var popup = document.querySelector('.popup');
-                    if (popup) {
-                        closePopup(popup);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        // Função para fechar o popup
-        function closePopup(popup) {
-            var overlay = document.querySelector('.overlay');
-            if (popup && overlay) {
-                popup.remove();
-                overlay.remove();
-            }
-        }
-
-        // Função para adicionar evento de clique em cada linha da tabela
-        function addClickEventToRows() {
-            var rows = document.querySelectorAll('.table-fixed-header tbody tr');
-            rows.forEach(function (row) {
-                row.addEventListener('click', function () {
-                    var gravidade = row.querySelector('td:nth-child(1)').textContent;
-                    var endereco = row.querySelector('td:nth-child(2)').textContent;
-                    var nat = row.querySelector('td:nth-child(3)').textContent;
-                    var opm = row.querySelector('td:nth-child(4)').textContent;
-                    var espera = row.querySelector('td:nth-child(5)').textContent;
-                    var oco = row.querySelector('td:nth-child(6)').textContent;
-
-                    showPopup(gravidade, endereco, nat, opm, espera, oco);
-                });
-            });
-        }
-
-        // Chame a função para adicionar o evento de clique após a tabela ser carregada
-        window.addEventListener('DOMContentLoaded', function () {
-            addClickEventToRows();
+            isExpanded = !isExpanded;
         });
+    });
+</script>
 
-        // Função para exibir o popup com os dados
-        function showPopup(gravidade, endereco, nat, opm, espera, oco) {
-            // Crie o elemento do popup
-            var popup = document.createElement('div');
-            popup.classList.add('popup');
-            popup.style.backgroundColor = 'white'; // Defina a cor de fundo como branco
-            popup.style.color = 'black'; // Defina a cor do texto como preto
 
-            // Crie os elementos para exibir os dados
-            var gravidadeElement = document.createElement('p');
-            gravidadeElement.textContent = 'Gravidade: ' + gravidade;
-            var enderecoElement = document.createElement('p');
-            enderecoElement.textContent = 'Endereço: ' + endereco;
-            var natElement = document.createElement('p');
-            natElement.textContent = 'NAT: ' + nat;
-            var opmElement = document.createElement('p');
-            opmElement.textContent = 'OPM: ' + opm;
-            var esperaElement = document.createElement('p');
-            esperaElement.textContent = 'Espera: ' + espera;
-            var ocoElement = document.createElement('p');
-            ocoElement.textContent = 'OCO: ' + oco;
 
-            // Crie o campo de input "Prefixo"
-            var prefixoLabel = document.createElement('label');
-            prefixoLabel.textContent = 'Prefixo:';
-            var prefixoInput = document.createElement('input');
-            prefixoInput.setAttribute('type', 'text');
 
-            // Crie os botões
-            var observarButton = createButton('Observar', 'observar', handleButtonClick);
-            var abortarButton = createButton('Abortar', 'abortar', handleButtonClick);
-            var redirecionarButton = createButton('Redirecionar', 'redirecionar', handleButtonClick);
-            var closeButton = createButton('Fechar', 'fechar', handleButtonClick);
 
-            // Adicione os elementos ao popup
-            popup.appendChild(gravidadeElement);
-            popup.appendChild(enderecoElement);
-            popup.appendChild(natElement);
-            popup.appendChild(opmElement);
-            popup.appendChild(esperaElement);
-            popup.appendChild(ocoElement);
-            popup.appendChild(prefixoLabel);
-            popup.appendChild(prefixoInput);
-            popup.appendChild(observarButton);
-            popup.appendChild(abortarButton);
-            popup.appendChild(redirecionarButton);
-            popup.appendChild(closeButton);
 
-            // Crie o overlay (fundo escuro)
-            var overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.addEventListener('click', function () {
-                closePopup(popup);
+
+<!-- Modal Novo 4 -->
+<div class="modal fade" id="modal-novo-4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Abortar Ocorrências</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div>
+                        <div>
+                            <label for="opcao-1">
+                                <input type="radio" id="opcao-1" name="opcao" onclick="handleRadioChange()">
+                                TROTE
+                            </label>
+                        </div>
+                        <div>
+                            <label for="opcao-2">
+                                <input type="radio" id="opcao-2" name="opcao" onclick="handleRadioChange()">
+                                CONTATO VIA FONE SOLICITANTE DISPENSA PRESENÇA DE VIATURA NO LOCAL
+                            </label>
+                        </div>
+                        <div>
+                            <label for="opcao-3">
+                                <input type="radio" id="opcao-3" name="opcao" onclick="handleRadioChange()">
+                                ENDEREÇO NÃO LOCALIZADO
+                            </label>
+                        </div>
+                        <div>
+                            <label for="opcao-4">
+                                <input type="radio" id="opcao-4" name="opcao" onclick="handleRadioChange()">
+                                Opção 4
+                            </label>
+                        </div>
+                        <textarea id="texto-editavel" class="form-control" rows="3" oninput="handleTextareaInput()" disabled></textarea>
+
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button id="btn-salvar-observar" type="button" class="btn btn-primary">Abortar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function handleRadioChange() {
+                const textarea = document.getElementById('texto-editavel');
+                const radios = document.getElementsByName('opcao');
+
+                let selectedOption = null;
+
+                for (const radio of radios) {
+                    if (radio.checked) {
+                        selectedOption = radio;
+                        break;
+                    }
+                }
+
+                if (selectedOption) {
+                    textarea.value = selectedOption.parentElement.textContent.trim();
+                    textarea.disabled = false;
+                } else {
+                    textarea.disabled = false;
+                }
+            }
+        </script>
+
+        @stop
+
+        @section('css')
+        <style>
+            /* Estilo para reduzir o espaço entre as células */
+            #despachos tbody td,
+            #viaturas tbody td {
+                padding-top: 1px;
+                padding-bottom: 1px;
+            }
+
+            #despachos thead {
+                position: sticky;
+                top: 0;
+                background-color: white;
+            }
+
+            #viaturas thead {
+                position: sticky;
+                top: 0;
+                background-color: white;
+            }
+
+            .btn-app {
+                font-size: 09px;
+                /* Defina o tamanho da fonte desejado */
+            }
+        </style>
+        @stop
+
+        @section('js')
+        <!-- Script específico da página -->
+        <script src="{{url('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <!-- Certifique-se de ter incluído o jQuery e o Bootstrap corretamente -->
+        <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="{{url('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+
+        <script>
+            $(document).ready(function() {
+                // Ao detectar um duplo clique em uma linha da tabela
+                $('tbody').on('dblclick', 'tr', function() {
+                    // Obtém os dados da ocorrência da linha clicada
+                    var endereco = $(this).find('td:eq(2)').text().trim();
+                    var nat = $(this).find('td:eq(3)').text().trim();
+                    var opm = $(this).find('td:eq(4)').text().trim();
+                    // Você pode adicionar mais variáveis aqui para outros dados da ocorrência, se necessário.
+
+                    // Preenche o modal com os dados da ocorrência
+                    $('#modal-detalhes').find('.modal-body input').val(endereco);
+                    // Preencha outras partes do modal conforme necessário.
+
+                    // Abre o modal
+                    $('#modal-detalhes').modal('show');
+                });
             });
-
-            // Adicione o popup e o overlay ao corpo do documento
-            document.body.appendChild(popup);
-            document.body.appendChild(overlay);
-        }
+        </script>
 
 
-    </script>
-@endpush
+        <script>
+            // Função para formatar o tempo em HH:MM:SS
+            function formatarTempo(tempoSegundos) {
+                let horas = Math.floor(tempoSegundos / 3600);
+                let minutos = Math.floor((tempoSegundos % 3600) / 60);
+                let segundos = Math.floor(tempoSegundos % 60);
+
+                // Formatar para sempre exibir 2 dígitos para as horas, minutos e segundos
+                horas = horas.toString().padStart(2, '0');
+                minutos = minutos.toString().padStart(2, '0');
+                segundos = segundos.toString().padStart(2, '0');
+
+                return `${horas}:${minutos}:${segundos}`;
+            }
+
+
+
+            // Chamar a função para atualizar o tempo decorrido a cada segundo
+            setInterval(atualizarTempoDecorrido, 1000);
+        </script>
+
+
+        @stop
